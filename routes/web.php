@@ -18,24 +18,19 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-
-
-
+//Route for User
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
-    Route::any('/search','HomeController@search')->name('search');
-    Route::any('/filter','HomeController@filter')->name('filter');
-    //Route::get('/create', 'HomeController@create');
+    Route::get('/search','HomeController@search')->name('search');
     Route::resource('todo', 'HomeController');
     Route::get('/mywork', 'HomeController@mywork');
-    Route::get('/toptag', 'admin\AdminController@index');
-
 });
 
+//Route for Admin
 Route::group(['prefix' => 'admin'], function(){
     Route::group(['middleware' => ['admin']], function(){
-        Route::get('/dashboard', 'admin\AdminController@index');
+        Route::get('/home', 'HomeController@index');
+        Route::get('/toptag', 'admin\AdminController@index');
     });
 });
 

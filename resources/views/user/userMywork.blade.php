@@ -24,12 +24,11 @@
 
 
                             <form action="{{ url('/todo/'.$todo->id) }}" method="post" form="form-delete">
-
                                 @method('DELETE')
                                 @csrf
                             <button class="btn btn-outline-danger" type="submit" onclick="confirm_delete()" style="float: right;">Delete</button>
-
                             </form>
+
                             <a href="{{ url('/todo/'.$todo->id.'/edit') }}" class="btn btn-outline-success" style="float: right;"> Edit </a>
                         </div>
                     </div>

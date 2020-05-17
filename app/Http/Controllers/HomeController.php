@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         if(auth()->user()->isAdmin()) {
 
-            $counts = Todo::all()->count();
+         $counts = Todo::all()->count();
          $todos = Todo::OrderBy('created_at','desc')->get();
          return view('admin/adminHome')->with('todos',$todos)->with('counts',$counts);
 
@@ -62,31 +62,22 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //dd($request->all());
         $this->validate($request,
             [
                 'title' => 'required',
                 'type' => 'required',
                 'file' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
-                // 'file1' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
                 'about' => 'required'
             ]
         );
-
         $file_name = time().'.'.$request->file->extension();
         $request->file->move(public_path('uploads'),$file_name);
-
-        // $file_name1 = time().'.'.$request->file->extension();
-        // $request->file->move(public_path('uploads'),$file_name1);
-
 
         ($request->file());
         $todo = new Todo();
         $todo->title = $request->input('title');
         $todo->type = $request->input('type');
         $todo->file_name = $file_name;
-        // $todo->file_name1= $file_name1;
         $todo->about = $request->input('about');
         $todo->save();
 
@@ -138,15 +129,11 @@ class HomeController extends Controller
                 'about' => 'required'
             ]
         );
-
-
-
         $todo = Todo::find($id);
         $todo->title = $request->input('title');
         $todo->type = $request->input('type');
         $todo->about = $request->input('about');
         $todo->save();
-
         return redirect('/mywork')->with('success','Edit Successful ');
     }
 
@@ -158,7 +145,6 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-
         $todo = Todo::find($id);
         $todo->delete();
         return redirect('/home')->with('success','Delete Successful ');
@@ -167,7 +153,6 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-
         if($search != ''){
             $todos = Todo::where('title','like', '%'.$search.'%')
                 ->orWhere('type','like', '%'.$search.'%')
@@ -181,8 +166,6 @@ class HomeController extends Controller
             }
             return redirect('/home')->with('notfound', 'No result');
         }
-
-
 
     }
 

@@ -46,7 +46,7 @@
                 </div>
             </div>
             @endforeach
-            @endif
+                @endif
 {{--            <div class="col-3">--}}
 {{--                <div class="card" style="width: 27rem;">--}}
 {{--                    <img class="card-img-top" src="https://cdn.dribbble.com/users/2407/screenshots/11389593/media/17514d8941b2032b32b267646a1f61b9.png" alt="Card image cap">--}}
