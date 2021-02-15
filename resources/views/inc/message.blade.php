@@ -14,11 +14,6 @@
 @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session ('success') }}
-{{--        @if(session('editAgain'))--}}
-{{--            <a href=" {{ url('todo/'.session('editAgain').'/edit') }}">--}}
-{{--                edit again id = {{ session('editAgain') }}--}}
-{{--            </a>--}}
-{{--        @endif--}}
         <button type="button" class="close" data-dismiss="alert">
             <span>x</span>
         </button>

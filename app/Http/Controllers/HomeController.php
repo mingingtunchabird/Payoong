@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Todo;
+use App\Renter;
 use Illuminate\Http\Request;
+
 
 
 class HomeController extends Controller
@@ -25,17 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->isAdmin()) {
 
-         $counts = Todo::all()->count();
-         $todos = Todo::OrderBy('created_at','desc')->get();
-         return view('admin/adminHome')->with('todos',$todos)->with('counts',$counts);
+          $todos = Renter::OrderBy('created_at','desc')->get();
+          return view('userHome')->with('todos',$todos);
 
-        } else {
-
-            $todos = Todo::OrderBy('created_at','desc')->get();
-            return view('user/userHome')->with('todos',$todos);
-        }
     }
     /**
      * Show the form for creating a new resource.
@@ -51,6 +45,7 @@ class HomeController extends Controller
     public function mywork()
     {
         $todos = Todo::OrderBy('created_at','desc')->get();
+
         return view('user/userMywork')->with('todos',$todos);
     }
 
@@ -62,26 +57,26 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,
-            [
-                'title' => 'required',
-                'type' => 'required',
-                'file' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
-                'about' => 'required'
-            ]
-        );
-        $file_name = time().'.'.$request->file->extension();
-        $request->file->move(public_path('uploads'),$file_name);
-
-        ($request->file());
-        $todo = new Todo();
-        $todo->title = $request->input('title');
-        $todo->type = $request->input('type');
-        $todo->file_name = $file_name;
-        $todo->about = $request->input('about');
-        $todo->save();
-
-        return redirect('/home')->with('success','Create Success');
+//        $this->validate($request,
+//            [
+//                'title' => 'required',
+//                'type' => 'required',
+//                'file' => 'required|mimes:jpg,jpeg,png,gif|max:2048',
+//                'about' => 'required'
+//            ]
+//        );
+//        $file_name = time().'.'.$request->file->extension();
+//        $request->file->move(public_path('uploads'),$file_name);
+//
+//        ($request->file());
+//        $todo = new Todo();
+//        $todo->title = $request->input('title');
+//        $todo->type = $request->input('type');
+//        $todo->file_name = $file_name;
+//        $todo->about = $request->input('about');
+//        $todo->save();
+//
+//        return redirect('/home')->with('success','Create Success');
 
 
 
@@ -167,6 +162,11 @@ class HomeController extends Controller
             return redirect('/home')->with('notfound', 'No result');
         }
 
+    }
+
+    public function importForm()
+    {
+        return view('import-form');
     }
 
 //    public function filter(Request $request)

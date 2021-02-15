@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 class LoginController extends Controller
 {
     /*
@@ -40,10 +42,8 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        if(auth()->user()->isAdmin()) {
-            return '/home';
-        } else {
-            return '/home';
-        }
+        toast('ล็อกอินสำเร็จ','success')->autoClose(3000);
+        return '/home';
+
     }
 }

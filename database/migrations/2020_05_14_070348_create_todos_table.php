@@ -13,13 +13,15 @@ class CreateTodosTable extends Migration
      */
     public function up()
     {
-        Schema::create('todos', function (Blueprint $table) {
+        Schema::create('renter', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->mediumText('title');
-            $table->mediumText('type');
-            $table->string('file_name');
-            //$table->string('file_name1');
-            $table->mediumText('about');
+            $table->integer('roomid');
+            $table->mediumText('firstname');
+            $table->mediumText('lastname');
+            $table->mediumText('iden_num');
+            $table->mediumText('email');
+            $table->mediumText('nationality');
+            $table->mediumText('verify_code');
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ class CreateTodosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todos');
+        Schema::dropIfExists('renter');
     }
 }

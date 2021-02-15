@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\RenterController;
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,23 +17,48 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    //Alert::success('Success Title', 'Success Message');
     return view('welcome');
 });
 
 Auth::routes();
-//Route for User
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/search','HomeController@search')->name('search');
-    Route::resource('todo', 'HomeController');
+    //Route::resource('todo', 'HomeController');
     Route::get('/mywork', 'HomeController@mywork');
+    Route::get('/import-form','RenterController@importForm');
+    Route::post('/import','RenterController@import')->name('import');
+
+    Route::post('/importuser','RenterController@importuser')->name('importuser');
+    Route::get('/add-user','RenterController@adduser');
+
+    Route::post('/importbill','RenterController@importbill')->name('importbill');
+    Route::get('/add-bill','RenterController@showbill');
+
+    Route::post('/addnews','RenterController@addnews')->name('addnews');
+    Route::get('/news','RenterController@shownews');
+
+    Route::get('/setting','RenterController@showsetting');
+    Route::post('/addsetting','RenterController@addsetting')->name('addsetting');
+
+    Route::get('/package','RenterController@showpackage');
+    Route::post('/addpackage','RenterController@addpackage')->name('addpackage');
+
+    Route::get('/repair','RenterController@showrepair');
+    Route::post('/addRepair','RenterController@addRepair')->name('addRepair');
+
+    Route::get('/genbill','RenterController@genbill');
+
+    Route::get('/complain', 'RenterController@complain' );
+    Route::post('/addComplain','RenterController@addComplain')->name('addComplain');
+    //Route::get('/complain', [App\Http\Controller\RenterController::class, 'complain'] );
+
+    Route::get('/search', 'RenterController@search');
+
+
+
 });
 
-//Route for Admin
-Route::group(['prefix' => 'admin'], function(){
-    Route::group(['middleware' => ['admin']], function(){
-        Route::get('/home', 'HomeController@index');
-        Route::get('/toptag', 'admin\AdminController@index');
-    });
-});
+
 

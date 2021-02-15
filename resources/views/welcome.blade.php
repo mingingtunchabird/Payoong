@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>WorkSpace</title>
+        <title>BusyAuntie</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -58,23 +58,25 @@
         </style>
     </head>
     <body>
-    <div style="position: absolute;"> <img src="https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" width="1920" height="1080"> </div>
+    <div style="position: absolute;">
+        <img src="https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" width="1920" height="1080">
+    </div>
 
         <div class="flex-center position-ref full-height">
 
             <div class="content">
                 <div class="title m-b-md">
-                    WORKSPACE
+                    BUSY AUNTIE
                 </div>
                 <div class="m-b-md" style="font-size: 20px;">
-                    SHARE YOU FANTASTIC WORK
+                     DORM MANAGEMENT WORK
                 </div>
 
                 <div>
                     @if (Route::has('login'))
                         <div class="links">
                             @auth
-                                <a href="{{ url('/home') }}" >Home</a>
+                                <a href="{{ url('/home') }}" >Go to homepage</a>
                             @else
                                 <a href="{{ route('login') }}" class="btn btn-primary">ENTER WEBSITE</a>
                             @endauth
@@ -86,6 +88,7 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    @include('sweetalert::alert')
     </body>
 </html>
