@@ -4,37 +4,32 @@
     //ทำการเรียก func json_decode ตัวข้อมูลที่ได้มาเนื่องจากมีรูปเเบบเป็น JSON ** อย่าลืมใส่ true ด้วยเพื่อให้ข้อมูลออกมาในรูปเเบบของ Array Object
     $jsonData = json_decode($LINEData,true);
 
-    //เก็บ ReplyToken
+
   $replyToken = $jsonData["events"][0]["replyToken"];
-  // เก็บ userID
   $userID = $jsonData["events"][0]["source"]["userId"];
-  // เก็บ text
   $text = $jsonData["events"][0]["message"]["text"];
-  // เก็บ Timestamp
   $timestamp = $jsonData["events"][0]["timestamp"];
 
-  //กรอกที่อยู่ของ MySQL ที่เราจะติดต่อ
-$servername = "localhost";
-//กรอก User ที่ใช้เข้าสู่ MySQL ของเรา
-$username = "root";
-//กรอก Password ที่ใช้เข้าสู่ MySQL ของเรา
-$password = "";
-//กรอกชื่อ Database ที่เราต้องการจะเก็บข้อมูล, ดึงข้อมูล
+
+$servername = "https://payooong.000webhostapp.com";
+
+$username = "payooong";
+
+$password = "k7KH%fYEEAS!MmzaYQgl";
+
 $dbname = "dorm";
 
-// เริ่มเชื่อมต่อกับ MySQL
+
 $mysql = new mysqli($servername, $username, $password, $dbname);
-//ตั้งให้ข้อความทั้งหมด Encode เเบบ utf8 จะได้รองรับภาษาไทยครับ
+
 mysqli_set_charset($mysql, "utf8");
-// ตรวจสอบว่ามี Error จากการเชื่อมต่อหรือไม่ ลองเข้า URL ที่มาถึง php ตัวนี้ เเละดู Result ที่ออกมาว่ามี Error จากขั้นตอนการเชื่อมต่อ MySQLมั้ย
+
 if ($mysql->connect_error){
 	$errorcode = $mysql->connect_error;
 	print("MySQL(Connection)> ".$errorcode);
 }
 
-// Function นี้เอาไว้ใช้สำหรับส่ง POST Request กลับไปที่ LINE โดยวิธีการใช้คือ
-// ตรง เรียก Function นี้โดยให้ค่า $replyJson เป็น JSON Data ที่จะส่งกลับไปที่ LINE
-// เเละ $sendInfo เป็น Array ที่มีค่า URL (ที่อยู่ที่จะส่งกลับไปที่ LINE [Reply,Push]) เเละ Accesstoken ใน Array นั้น
+
 function sendMessage($replyJson, $sendInfo){
         $ch = curl_init($sendInfo["URL"]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

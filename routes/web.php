@@ -44,9 +44,20 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/package','RenterController@showpackage');
     Route::post('/addpackage','RenterController@addpackage')->name('addpackage');
+    Route::get('/acceptpack/{id}/update','PackageController@update')->name('acceptPackage');
+
+    Route::get('/recieved','PackageController@index')->name('packageRecieved');
+    Route::get('/notrecieve','PackageController@index2')->name('notRecieved');
+
 
     Route::get('/repair','RenterController@showrepair');
     Route::post('/addRepair','RenterController@addRepair')->name('addRepair');
+    Route::get('/accept/{id}/update','StatusController@update')->name('acceptRepair');
+    Route::get('/accept/{id}/update2','StatusController@update2')->name('acceptRepair2');
+
+    Route::get('/repairProcessing','StatusController@index')->name('processRepair');
+
+    Route::get('/repairDone','StatusController@index2')->name('doneRepair');
 
     Route::get('/genbill','RenterController@genbill');
 
@@ -55,6 +66,8 @@ Route::group(['middleware' => ['auth']], function () {
     //Route::get('/complain', [App\Http\Controller\RenterController::class, 'complain'] );
 
     Route::get('/search', 'RenterController@search');
+
+    Route::get('/package/{id}/destroy','PackageController@destroy')->name('destroy');
 
 
 

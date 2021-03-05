@@ -10,10 +10,11 @@
         }
 
         .box{
-            position: fixed;
-            height: 100vh;
-            width: 80vw;
-            margin-left: 10vw;
+            /* position: fixed; */
+            height: 100%;
+            width: 70vw;
+            /* margin-left: 10vw; */
+            /* transform: translate(35px,100px); */
             background-color: white;
             margin-top: 20vh;
             border-radius: 10px;
@@ -27,11 +28,12 @@
             left: 0;
             top: 0;
 
-            width: 1500px; /* Full width */
+            width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
         }
 
         /* Modal Content/Box */
@@ -41,6 +43,7 @@
             padding: 20px;
             border: 1px solid #888;
             width: 50%; /* Could be more or less, depending on screen size */
+            transform: translate(0,0);
         }
 
         /* The Close Button */
@@ -75,12 +78,28 @@
         <div class="row">
 
 
-            <div class="col"><h4>ห้อง  </h4></div>
+            <div class="col"><h4>ห้อง 112 </h4></div>
 
 
 
           <div class="w-100"></div>
           <div class="col">ไอซ์ พาริส หล่อมาก</div>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="container">
+        <div class="row">
+
+
+            <div class="col"><h4>ห้อง 325 </h4></div>
+
+
+
+          <div class="w-100"></div>
+          <div class="col">ห้องข้าง ๆ เเลี้ยงแมวเสียงดังมากเลย</div>
 
         </div>
       </div>
@@ -103,8 +122,8 @@
 
                         <div class="form-group col-6">
 
-                            <label for="exampleFormControlInput1">กรอกหัวข้อการร้องเรียน</label>
-                            <select class="form-control" name="elec_rate">
+                            <label for="exampleFormControlInput1">ห้อง</label>
+                            <select class="form-control" name="title">
 
                                     @foreach($renters as $renter)
                                         <option>{{$renter->roomid}}</option>
@@ -115,8 +134,8 @@
 
 
                         <div class="form-group col-md-6">
-                            <label for="exampleFormControlInput1">แนบรูปภาพ</label>
-                            <input type="text" name="img" class="form-control" id="exampleFormControlInput1" placeholder="กรอกหมายเลขติดตาม">
+                            <label for="exampleFormControlInput1">รายละเอียด</label>
+                            <input type="text" name="detail" class="form-control" id="exampleFormControlInput1" placeholder="กรอกรายละเอียดเรื่องร้องเรียน">
                         </div>
 
 
@@ -124,7 +143,7 @@
 
 
                         <div class="form-group col-12 text-center mt-4">
-                            <button type="submit" class="btn col-6" style="background: #2B4161; color: #f7f7f7;">เพิ่มรายการแจ้งซ่อม</button>
+                            <button type="submit" class="btn col-6" style="background: #2B4161; color: #f7f7f7;">เพิ่มรายการร้องเรียน</button>
                         </div>
 
 

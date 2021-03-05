@@ -16,7 +16,6 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <script src="https://kit.fontawesome.com/67dd3a2868.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
@@ -45,7 +44,7 @@
         height: 100vh;
         /* z-index: 2; */
         background: #ffffff;
-        color: #fff;
+        color: #2B4161;
         transition: all 0.3s;
 
 
@@ -82,8 +81,8 @@
 
 </style>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky" style="z-index: 4; height: 90px; ">
-        <a href="home">                <img   src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="185px" height="37px">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky" style="z-index: 4; height: 90px; position: fixed;">
+        <a href="home">                <img   src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="185px" height="36px">
         </a>
         <div class="container-fluid">
 
@@ -186,10 +185,7 @@
                         </li>
                     </ul>
                 </li>
-                <br>
-                <li>
-                    <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false" > <i class="fas fa-ticket-alt mr-1"></i> คูปอง </a>
-                </li>
+
 
                 <br>
                 <li>

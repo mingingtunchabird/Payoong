@@ -19,11 +19,11 @@
             width: 100%;
         }
 
-        #myBtn{
+        /* #myBtn{
             background-color: #61D15B;
             border: none;
             color: white;
-        }
+        } */
 
         #sidebar {
             width: 250px;
@@ -46,6 +46,11 @@
         a{
             text-decoration: none !important;
         }
+
+        span.active-menu a{
+            background-color: white;
+            color: black;
+        }
         input,option,label{
             font-family: Mitr;
             color: #9E9E9E;
@@ -58,7 +63,7 @@
             left: 0;
             top: 0;
 
-            width: 1500px; /* Full width */
+            width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
             background-color: rgb(0,0,0); /* Fallback color */
@@ -82,6 +87,11 @@
             font-weight: bold;
         }
 
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            }
+
         .close:hover,
         .close:focus {
             color: black;
@@ -90,14 +100,17 @@
         }
 
         .box{
-            position: fixed;
-            height: 100vh;
-            width: 150vh;
-            margin-left: 10vw;
+            /* margin: auto; */
+            /* width: 60%; */
+            height: fit-content;
+            width: 100%;
+            /* margin-left: 10vw; */
             background-color: white;
-            margin-top: 20vh;
+            /* margin-top: 20vh; */
             border-radius: 10px;
+            transform: translate( 0%, 10%);
         }
+
 
 
 
@@ -106,40 +119,79 @@
 
 
 
+<div class="container ">
 
-    <div class="container box" >
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12 mt-3"> <p style="font-size: 30px;"> รายการแจ้งซ่อม </p></div>
+</div>
+    <div class="box" >
 
-            <br><br>
+    {{-- <div class="container"> --}}
+        <div class="d-flex">
+            <div class="p-2"> <p style="font-size: 30px;"> รายการแจ้งซ่อม </p></div>
+
+            <div class="ml-auto p-2">
+                <button id="myBtn" class="btn btn-outline-success" style="margin-top:15px;">  เพิ่มรายการแจ้งซ่อม  </button>
+            </div>
         </div>
+
+
+    {{-- </div> --}}
+    <form action="/repair" method="GET">
+        {{-- <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <a href="/repair" style="font-size: 20px;">รายการทั้งหมด |</a></span>
+                </div>
+            </div>
+        </div> --}}
+        <div class="d-flex">
+            <div class="p-2"> <p style="font-size: 18px; color:gray;"> เลือกรายการที่จะแสดง </p></div>
+        </div>
+
+        <div class="d-flex">
+
+
+            <div class="p-2">
+                <span>
+                    <a class="active-menu" href="/repair" style="font-size: 20px; padding-top:10px; color: black;">รายการทั้งหมด </a>|
+                    <a href="{{route('processRepair')}}" style="font-size: 20px; padding-top:10px; color: grey;">กำลังดำเนินการ </a>|
+                    <a href="{{route('doneRepair')}}" style="font-size: 20px; padding-top:10px; color: grey;">ดำเนินการแล้ว </a> |
+                </span>
+
+            </div>
+
+    <div class="p-2">
+            <select class="form-control selectpicker" name="type_repair">
+                <option value="" disabled selected>เลือกรายการ</option>
+                <option>ซ่อมไฟฟ้า</option>
+                <option>ซ่อมน้ำประปา</option>
+                <option>ซ่อมแอร์</option>
+                <option>ซ่อมประตู</option>
+                <option>ซ่อมทีวี</option>
+            </select>
     </div>
-
-   <div class="container">
-       <div class="row justify-content-end">
-           <button id="myBtn" class="btn mt-2 justify-content" style="">  เพิ่มรายการแจ้งซ่อม  </button>
-           <br><br>
-       </div>
-   </div>
-
-
-
-
-    <br>
-
-
-
+        <div class="p-2">
+            <button type="submit" class="btn btn-outline-secondary p-2" style="border-radius: 50%;">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+    </div>
 
     @if(count($repairs)>0)
         <table class="table">
             <thead class="thead-dark">
             <tr>
-                <th scope="col" style="font-weight: lighter;">วัน-เวลา เข้าซ่อม</th>
-                <th scope="col" style="font-weight: lighter;">หัวข้อ</th>
-                <th scope="col" style="font-weight: lighter;">ภาพประกอบ</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">ห้อง</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">เวลาที่แจ้ง</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">วันที่เข้าซ่อม</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">ช่วงเวลาที่เข้าซ่อม</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">หัวข้อ</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">สถานะ</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">action</th>
+
                 <th scope="col" style="font-weight: lighter;"></th>
+
 
 
             </tr>
@@ -150,10 +202,69 @@
 
             @foreach($repairs as $repair)
                 <tr>
-                    <td>{{$repair->day}} <br> {{$repair->time}}</td>
-                    <td> {{$repair->type_repair}} </td>
-                    <td>{{ $repair->img }}</td>
-                    <td><button class="btn btn-success" type="submit">รายละเอียด</button>  </td>
+                    <td style="font-weight: lighter; text-align: center;">{{$repair->roomid}}</td>
+                    <td style="font-weight: lighter; text-align: center;">{{$repair->created_at}}</td>
+                    <td style="font-weight: lighter; text-align: center;">{{$repair->day}}</td>
+                    <td style="font-weight: lighter; text-align: center;">{{$repair->time}}</td>
+                    <td style="font-weight: lighter; text-align: center;"> {{$repair->type_repair}} </td>
+
+                    @if($repair->status == "ยังไม่ได้ซ่อม")
+                    <td style="font-weight: lighter; text-align: center;" class="text-danger">{{ $repair->status }}</td>
+                    @endif
+                    @if ($repair->status == "ซ่อมแล้ว")
+                    <td style="font-weight: lighter; text-align: center;" class="text-success">{{ $repair->status }}</td>
+                    @endif
+                    @if ($repair->status == "กำลังดำเนินการ")
+                    <td style="font-weight: lighter; text-align: center;" class="text-warning">{{ $repair->status }}</td>
+                    @endif
+
+
+
+                    @if ($repair->status == "ซ่อมแล้ว")
+                    <td style="text-align: center;">
+
+                        <button id="myBtn2" class="btn btn-success" type="submit">แจ้งเตือน</button>
+
+                    </td>
+                    @endif
+
+
+                    @if ($repair->status == "กำลังดำเนินการ")
+                    <td style="text-align: center;">
+
+                        <a href="{{route('acceptRepair2', $repair->id)}}" id="myBtn2" class="btn btn-success">ดำเนินการแล้ว</a>
+                    </td>
+                    @endif
+
+
+                    @if ($repair->status == "ยังไม่ได้ซ่อม")
+                    <td style="text-align: center;">
+
+                        <a href="{{route('acceptRepair', $repair->id)}}" id="myBtn2" class="btn btn-success">รับเรื่องซ่อม</a>
+                    </td>
+                    @endif
+
+                    @if($repair->status == "ซ่อมแล้ว")
+                    {{-- <td style="text-align: center;">
+                        <div class="d-flex">
+                            <div class="p-2">
+                                <input type="text" class="form-control bg-white" id="textcopy{{$repair->id}}" value="ห้อง {{$repair->roomid.' ' . $repair->type_repair}}สำเร็จแล้วค่ะ" readonly>
+                            </div>
+
+                            <div class="p-2">
+                                <div class="input-group-append">
+                                    <button id="copyBtn{{$repair->id}}" class="btn btn-outline-warning" onclick="copy(this)" type="button" value="{{$repair->id}}">
+                                        copy
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </td> --}}
+                    @endif
 
                 </tr>
             @endforeach
@@ -162,55 +273,85 @@
             </tbody>
         </table>
 
-        <div id="myModal" class="modal">
+    </div>
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <form method="post" action="{{route('addRepair')}}">
-                    @csrf
-                    <div class="container">
-                        <div class="row">
+    <div id="myModal" class="modal">
 
-                            <div class="col-12"><p style="font-size: 18px;">เพิ่มรายการแจ้งซ่อม</p></div>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form method="post" action="{{route('addRepair')}}">
+                @csrf
+                <div class="container">
+                    <div class="row">
 
-                            <div class="form-group col-6">
+                        <div class="col-12"><p style="font-size: 18px;">เพิ่มรายการแจ้งซ่อม</p></div>
 
-                                <label for="exampleFormControlInput1">หัวข้อแจ้งซ่อม</label>
-                                <input type="text" name="type_repair" class="form-control" id="exampleFormControlInput1" placeholder="กรอกชื่อผู้รับ">
-                            </div>
+                        <div class="form-group col-6">
 
-
-
-                            <div class="form-group col-6">
-
-                                <label for="exampleFormControlInput1">วัน-เวลา</label>
-                                <input type="text" name="day time" class="form-control" id="exampleFormControlInput1" placeholder="กรอกวัน - เวลา">
-                            </div>
-
-
-                            <div class="form-group col-12">
-                                <label for="exampleFormControlInput1">แนบรูปภาพ</label>
-                                <input type="text" name="img" class="form-control" id="exampleFormControlInput1" placeholder="กรอกหมายเลขติดตาม">
-                            </div>
+                            <label for="exampleFormControlInput1">หัวข้อแจ้งซ่อม</label>
+                            <input type="text" name="roomid" class="form-control" id="exampleFormControlInput1" placeholder="หมายเลขห้อง">
+                        </div>
 
 
 
+                        <div class="form-group col-6">
+
+                            <label for="exampleFormControlInput1">หัวข้อแจ้งซ่อม</label>
+                            <select class="form-control" name="type_repair">
+                                <option>ซ่อมไฟฟ้า</option>
+                                <option>ซ่อมน้ำประปา</option>
+                                <option>ซ่อมแอร์</option>
+                                <option>ซ่อมประตู</option>
+                                <option>ซ่อมทีวี</option>
+                            </select>
+                        </div>
 
 
-                            <div class="form-group col-12 text-center mt-4">
-                                <button type="submit" class="btn col-6" style="background: #2B4161; color: #f7f7f7;">เพิ่มรายการแจ้งซ่อม</button>
-                            </div>
+
+                        <div class="form-group col-6">
+
+                            <label for="exampleFormControlInput1">วัน</label>
+                            <select class="form-control" name="day">
+                                <option>จันทร์</option>
+                                <option>อังคาร</option>
+                                <option>พุธ</option>
+                                <option>พฤหัส</option>
+                                <option>ศุกร์</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-6">
+
+                            <label for="exampleFormControlInput1">เวลา</label>
+                            <select class="form-control" name="time">
+                                <option>10.00 - 12.00 น.</option>
+                                <option>13.00 - 16.00 น.</option>
+                            </select>
+                        </div>
 
 
+                        {{-- <div class="form-group col-12">
+                            <label for="exampleFormControlInput1">สถานะ</label>
+                            <select class="form-control" name="status">
+
+
+                                    <option>ซ่อมแล้ว</option>
+                                    <option>ยังไม่ได้ซ่อม</option>
+                                    <option>กำลังดำเนินการ</option>
+
+
+
+                        </select>
+                        </div> --}}
+
+                        <div class="form-group col-12 text-center mt-4">
+                            <button type="submit" class="btn col-6" style="background: #2B4161; color: #f7f7f7;">เพิ่มรายการแจ้งซ่อม</button>
                         </div>
                     </div>
-                </form>
-            </div>
-
+                </div>
+            </form>
         </div>
-
-
     </div>
 
     <script>
@@ -240,6 +381,24 @@
             }
         }
     </script>
+
+<script>
+    function copy(clickedBtn){
+        var id = clickedBtn.value;
+        var copyText = document.querySelector('#textcopy'+id);
+        copyText.select();
+        document.execCommand('copy');
+        for (var i=1; i <= {{count($repairs)}}; i++){
+            if (i == id){
+                $("#copyBtn"+i).html("copied!");
+            }
+            else{
+                $("#copyBtn"+i).html("copy");
+            }
+        }
+        //alert("Copied! " + copyText.value);
+    }
+</script>
 
 
 

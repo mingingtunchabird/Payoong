@@ -44,12 +44,13 @@
             color: #9E9E9E;
         }
         .box{
-            position: fixed;
-            height: 100vh;
-            width: 500vh;
-            margin-left: 10vw;
+            /* position: fixed; */
+            height: 80%;
+            width: 70vw;
+            /* margin-left: 10vw; */
+            transform: translate(35px,100px);
             background-color: white;
-            margin-top: 20vh;
+            /* margin-top: 20vh; */
             border-radius: 10px;
         }
 

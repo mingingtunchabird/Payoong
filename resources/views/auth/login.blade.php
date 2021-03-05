@@ -18,12 +18,11 @@ body{
 }
 
 
-.cardjust{
-    margin: 0 auto;
-    width: 40rem;
-    height: fit-content;
-    background-color:#fff;
-    border-radius: 10px;
+.parent{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: #ffffff;
 
 
 }
@@ -34,11 +33,48 @@ body{
     height: 3rem;
     border-radius: 10px;
     text-align: center;
-    margin: 0 auto;
+    /* margin-left: 200px; */
+    left: 50%;
+
+
 
 }
 .input{
     padding: 0 0 2 2;
+}
+
+.mini-content{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.login-control{
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+.input{
+    width: 22vw;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    -moz-box-shadow:    inset 0 0 10px rgba(212, 212, 212, 0.33);
+   -webkit-box-shadow: inset 0 0 10px rgba(212, 212, 212, 0.33);
+   box-shadow:         inset 0 0 10px rgba(212, 212, 212, 0.33);
+}
+
+.content-div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 30vw;
+    height: 75vh;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(160,160,160,0.33);
+    box-shadow: 0px 0px 15px 3px rgba(160,160,160,0.33);
+    /* text-align: center; */
 }
 
 
@@ -49,21 +85,25 @@ body{
 
 
 
-            <div class="cardjust">
+            <div class="parent">
+                <div class="content-div">
 
 
-{{--                <h2 class="p-5" style="text-align: center;">LOGO</h2>--}}
-                <div class="text-center">   <img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="187" height="35" style="margin-top: 70px;">
+
+
+                <div class="text-center">   <img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="250" height="50" style="margin-top: 70px;">
                 </div>
+                <br>
+                    <br>
 
+                <div class="mini-content">
+                    <h4 style="color: #2B4161; ">เข้าสู่ระบบ</h4>
 
-                <div class="">
-                    เข้าสู่ระบบ
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="">
-                            <label for=""  style="color: #709EF9;">{{ __('E-Mail Address') }}</label>
+                            <label for=""  style="color: #709EF9;">{{ __('E-Mail Address *') }}</label>
                         </div>
                             <div >
                                 <input type="email" class="input form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -80,7 +120,7 @@ body{
                             <label for="password" style="color: #709EF9;">{{ __('Password') }}</label>
                         </div>
                             <div class="">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="input form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -89,21 +129,23 @@ body{
                                 @enderror
                             </div>
 
+                            <br>
 
-                        <div class="f">
+
+                        {{-- <div class="">
                             <div class="">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <div class="form-check" style="margin-left: 110px;">
+                                    <input class="form-check-input"  type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="">
-                            <div class="">
+                            <div class="login-control">
                                 <button type="submit" class="btn btn-login">
                                     {{ __('เข้าสู่ระบบ') }}
                                 </button>
@@ -111,12 +153,13 @@ body{
                         </div>
 
                         <div class="">
-                            <div class="col-md-5 offset-md-4">
-                                <a href="register">  ลงทะเบียน </a>
+                            <div class="login-control" style="padding-top: 2%;">
+                                <a href="register" style="font-size: 12px;"> ยังไม่ได้สมัครสมาชิก? | ลงทะเบียน </a>
                             </div>
                         </div>
 
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
 

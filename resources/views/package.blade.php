@@ -21,12 +21,14 @@
 
         .box{
             /* position: fixed; */
-            height: 100vh;
-            width: 80vw;
-            margin-left: 10vw;
+            height: 100%;
+            width: 100%;
+            /* margin-left: 10vw; */
             background-color: white;
-            margin-top: 20vh;
+            /* margin-top: 20vh; */
             border-radius: 10px;
+            /* display: flex; */
+            transform: translate( 0%, 10%);
         }
 
         .btnSearch{
@@ -118,27 +120,34 @@
 
     <div class="container box" >
     <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-12 mt-3"> <p style="font-size: 30px;"> รายการพัสดุ </p></div>
-        </div>
-            <div class="d-flex">
+        <div class="d-flex">
+            <div class="p-2"> <p style="font-size: 30px;"> รายการพัสดุ </p></div>
 
-                <form method="get" action="'/search'">
-                <div class="p-2">
-                    <div class="form-outline">
-                        <input type="search" id="form1" class="form-control" placeholder="ค้นหาพัสดุ" aria-label="Search" />
+            <div class="ml-auto p-2">
+                <button id="myBtn" class="btn btn-danger" style="margin-top: 10px "> เพิ่มพัสดุ </button>
+            </div>
+        </div>
+
+
+
+            <form  action="/package" method="GET">
+                <div class="d-flex">
+                    <div class="p-2"> <p style="font-size: 18px; color:gray;"> เลือกรายการที่จะแสดง </p></div>
+                </div>
+                <div class="d-flex">
+
+                    <div class="p-2">
+                        <span>
+                            <a class="active-menu" href="/package" style="font-size: 20px; padding-top:10px; color: black;">รายการทั้งหมด </a>|
+                            <a href="{{route('packageRecieved')}}" style="font-size: 20px; padding-top:10px; color: grey;">รับแล้ว </a>|
+                            <a href="{{route('notRecieved')}}" style="font-size: 20px; padding-top:10px; color: grey;">ค้างรับ</a> |
+                        </span>
+
                     </div>
                 </div>
-                <div class="p-2">
-                        <button class="btn btnSearch" > <i class="fas fa-search" style="font-size: 1.5em"></i> </button>
-                </div>
-                </form>
 
+            </form>
 
-                <div class="ml-auto p-2">
-                    <button id="myBtn" class="btn btn-danger" style="margin-right: 10px "> เพิ่มพัสดุ </button>
-                </div>
-            </div>
 
 
 
@@ -157,13 +166,14 @@
         <table class="table">
             <thead class="thead-dark">
             <tr>
-                <th scope="col" style="font-weight: lighter">วัน-เวลา ที่มาส่ง</th>
-                <th scope="col" style="font-weight: lighter">ห้อง</th>
-                <th scope="col" style="font-weight: lighter">ชื่อผู้รับ</th>
-                <th scope="col" style="font-weight: lighter">เจ้าหน้าที่ผู้รับแทน</th>
-                <th scope="col" style="font-weight: lighter">หมายเลขติดตาม</th>
-                <th scope="col" style="font-weight: lighter">ภาพประกอบ</th>
-                <th scope="col" style="font-weight: lighter"></th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">วัน-เวลา ที่มาส่ง</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">ห้อง</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">ชื่อผู้รับ</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">เจ้าหน้าที่ผู้รับแทน</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">หมายเลขติดตาม</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">สถานะ</th>
+                {{-- <th scope="col" style="font-weight: lighter">ภาพประกอบ</th> --}}
+                <th scope="col" style="font-weight: lighter; text-align: center;">action</th>
             </tr>
             </thead>
             <tbody>
@@ -172,13 +182,36 @@
 
             @foreach($packages as $package)
                 <tr>
-                    <td>{{$package->created_at}}</td>
-                    <td> {{$package->roomid}} </td>
-                    <td> {{$package->pac_name}} </td>
-                    <td>{{ $package->emp_name }}</td>
-                    <td>  {{$package->trackid}}  </td>
-                    <td>  {{$package->img}}  </td>
-                    <td>  <button type="button" class="btn btn-danger">ลบ</button> </td>
+                    <td style="font-weight: lighter; text-align: center;">{{$package->created_at}}</td>
+                    <td style="font-weight: lighter; text-align: center;"> {{$package->roomid}} </td>
+                    <td style="font-weight: lighter; text-align: center;"> {{$package->pac_name}} </td>
+                    <td style="font-weight: lighter; text-align: center;">{{ $package->emp_name }}</td>
+                    <td style="font-weight: lighter; text-align: center;">  {{$package->trackid}}  </td>
+                    @if($package->status == "ยังไม่รับ")
+                    <td style="font-weight: lighter; text-align: center;" class="text-danger">{{ $package->status }}</td>
+                    @endif
+                    @if ($package->status == "รับแล้ว")
+                    <td style="font-weight: lighter; text-align: center;" class="text-success">{{ $package->status }}</td>
+                    @endif
+                    {{-- <td>  {{$package->img}}  </td> --}}
+
+                        @if ($package->status == "ยังไม่รับ")
+                    <td style="text-align: center;">
+
+                        <a href="{{route('acceptPackage', $package->id)}}" id="myBtn2" class="btn btn-success">รับแล้ว</a>
+                    </td>
+                    @endif
+                        {{-- <a  href="{{ route('destroy', $package->id) }}" class="del btn btn-danger" onclick="return confirm('ยืนยันการลบ?');">ลบ</a> --}}
+                        @if($package->status == "รับแล้ว")
+                    <td style="text-align: center;">
+                        <a  href="{{ route('destroy', $package->id) }}" class="del btn btn-danger" onclick="return confirm('ยืนยันการลบ?');">ลบ</a>
+                    </td>
+                    @endif
+
+
+
+
+
                 </tr>
             @endforeach
             @endif
@@ -186,6 +219,7 @@
             </tbody>
         </table>
 
+    </div>
 
     <div id="myModal" class="modal">
 
@@ -250,8 +284,6 @@
 
     </div>
 
-    </div>
-
 
 
 
@@ -282,6 +314,11 @@
                 }
             }
         </script>
+
+
+
+
+
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

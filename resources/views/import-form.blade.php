@@ -1,18 +1,22 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 @section('content')
 
     @csrf
     <style type="text/css">
-        body { background: #F5F5F5 !important;
+        body { background:  #F5F5F5 !important;
                 font-family: Mitr-Regular !important;
 
         }
         .box{
-        height: 100vh;
-        width: 900vh;
-        margin-left: 25vw;
+        /* position: fixed; */
+        height: fit-content;
+        width: 70vw;
+        /* margin-left: 10vw; */
+        transform: translate(150px,100px);
         background-color: white;
-        margin-top: 10vh;
+        /* margin-top: 20vh; */
         border-radius: 10px;
     }
 
@@ -28,6 +32,17 @@
             transition: all 0.3s;
         }
 
+        p,a,h3{
+            font-family: Mitr;
+            color: #1d2124;
+        }
+        a{
+            text-decoration: none !important;
+        }
+        input,option{
+            font-family: Mitr;
+            color: #9E9E9E;
+        }
 
 
 
@@ -40,7 +55,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 
-    <div class="container box">
+    <div class="container box" >
     <div class="container ml-3">
 {{--        <button class="btn btn-outline-danger"> <a href="home" style="color: black;"> < back </a> </button>--}}
         <br><br>
@@ -71,7 +86,11 @@
             <input type="file" name="file" class="form-control"/>
         </div>
         <br><br>
-        <input type="submit" style="background: #2B4161; color: #f7f7f7; " class="btn btn-primary col-md-12" value="อัปโหลดไฟล์"/>
+
+        <div>
+            <input type="submit" style="background: #2B4161; color: #f7f7f7; margin-top: 20px; " class="btn btn-primary col-md-12" value="อัปโหลดไฟล์"/>
+        </div>
+
     </form>
         </div>
     </div>

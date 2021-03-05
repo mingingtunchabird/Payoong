@@ -20,13 +20,14 @@
             width: 100%;
         }
         .box{
-            position: fixed;
-            height: 100vh;
-            width: 80vw;
-            margin-left: 10vw;
-            background-color: white;
-            margin-top: 20vh;
+            /* position: fixed; */
+            height: 100%;
+            width: 100%;
+            /* margin-left: 10vw; */
+            /* background-color: white; */
+            /* margin-top: 20vh; */
             border-radius: 10px;
+            transform: translate( 0%, 10%);
         }
 
         p,a,h3{
@@ -48,7 +49,7 @@
             left: 0;
             top: 0;
             /*margin-left: 200px;*/
-            width: 1500px; /* Full width */
+            width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
             background-color: rgb(0,0,0); /* Fallback color */
@@ -115,10 +116,27 @@
         </div>
     </div>
 
+    @if(count($news)>0)
 
+        <div class="container" id="data-user">
+            <div class="row">
+                @foreach($news as $new)
+                    <div class="col-4">
+                        <div class="card" style="width: 20rem; margin-top: 30px;">
+                            <div class="card-body" style="border: none;">
+                                <p class="card-text" style="font-weight: normal;">{{$new->title}}</p>
+                                <p class="card-text" style="font-weight: lighter;">{{$new->detail}}</p>
+                                <button type="submit" class="btn col-6" style="background: #02C701; color: #f7f7f7; font-family: Mitr; border-radius: 10px;">ส่งแจ้งเตือน</button>
+                                <button type="submit" class="btn col-3 ml-4" style="background: #FF6666; color: #f7f7f7; font-family: Mitr; border-radius: 10px;">ลบ</button>
+                            </div>
+                        </div>
+                    </div>
 
-
-
+                @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
 
     <div id="myModal" class="modal">
 
@@ -151,30 +169,6 @@
             </form>
         </div>
 
-    </div>
-
-
-
-    @if(count($news)>0)
-
-        <div class="container" id="data-user">
-            <div class="row">
-                @foreach($news as $new)
-                    <div class="col-4">
-                        <div class="card" style="width: 20rem; margin-top: 30px;">
-                            <div class="card-body" style="border: none;">
-                                <p class="card-text" style="font-weight: normal;">{{$new->title}}</p>
-                                <p class="card-text" style="font-weight: lighter;">{{$new->detail}}</p>
-                                <button type="submit" class="btn col-6" style="background: #02C701; color: #f7f7f7; font-family: Mitr; border-radius: 10px;">ส่งแจ้งเตือน</button>
-                                <button type="submit" class="btn col-3 ml-4" style="background: #FF6666; color: #f7f7f7; font-family: Mitr; border-radius: 10px;">ลบ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                @endforeach
-                @endif
-            </div>
-        </div>
     </div>
 
 

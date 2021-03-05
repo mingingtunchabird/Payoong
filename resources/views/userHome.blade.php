@@ -10,13 +10,19 @@
 
 
         .box{
-            position: fixed;
+
             height: 100vh;
-            width: 80vw;
-            margin-left: 10vw;
+            width: 100%;
+            transform: translate(0px,100px);
             background-color: #F5F5F5;
-            margin-top: 20vh;
+            /* margin-top: 20vh; */
             border-radius: 10px;
+        }
+
+        .card{
+            width: 19rem;
+            margin-top: 30px;
+            border-color: #FFFFFF;
         }
 
 
@@ -61,7 +67,7 @@
             <div class="row">
                 @foreach($todos as $todo)
                     <div class="col-4" >
-                        <div class="card" style="width: 20rem; margin-top: 30px; border-color: #FFFFFF; ">
+                        <div class="card">
                             <div class="card-body">
                                 <p class="card-text" style="font-size:1.6em; "> {{$todo->firstname}} - {{$todo->lastname}}</p>
                                 <p class="card-text" style="font-weight: lighter;"> <i class="fas fa-door-open"></i> : {{$todo->roomid}}</p>

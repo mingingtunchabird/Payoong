@@ -10,7 +10,9 @@ use App\room;
 use App\setting;
 use App\package;
 use App\repair;
-// use App\complain;
+use App\complain;
+use Illuminate\Support\Facades\DB;
+// use App\filters;
 
 
 use App\Imports\EmployeeImport;
@@ -25,6 +27,29 @@ class RenterController extends Controller
 
 
 
+
+    public function index()
+    {
+
+        // $filterrepair = DB::table('repair')->select('type_repair')->distinct()->get()->pluck('type_repair');
+
+
+        // $filterrepair = $filterrepair->get()->append([
+        //     'filrepair' => request('filrepair')
+        // ]);
+
+        // $repair  = repair::query();
+
+        // if($request->filled('type_repair')){
+        //     $repair->where('type_repair', $request->filterrepair);
+        // }
+        // return view('repair', [
+        //     'type_repair'=>$filterrepair,
+        //     'repair' => $repair->get()
+        // ]);
+
+
+    }
 
     public function importForm()
     {
@@ -152,9 +177,9 @@ class RenterController extends Controller
                 'subtitle' => 'required',
             ]
         );
-        $complain = new addComplain();
-        $complain->roomid = $request->input('title');
-        $complain->subtitle = $request->input('detail');
+        $complain = new complain();
+        $complain->roomid = $request->input('roomid');
+        $complain->subtitle = $request->input('subtitle');
 
         $complain->save();
         toast('เพิ่มรายการร้องเรียนสำเร็จ','success')->autoClose(3000);
@@ -212,16 +237,22 @@ class RenterController extends Controller
 
 
 
+
+
+
+
+
+
     public function addpackage(Request $request ){
 
-        $this->validate($request,
-            [
-                'pac_name' => 'required',
-                'emp_name' => 'required',
-                'trackid' => 'required',
-                'roomid' => 'required',
-            ]
-        );
+        // $this->validate($request,
+        //     [
+        //         'pac_name' => 'required',
+        //         'emp_name' => 'required',
+        //         'trackid' => 'required',
+        //         'roomid' => 'required',
+        //     ]
+        // );
 
         $package = new package();
         // $news->title = $request->input('title');
@@ -230,7 +261,7 @@ class RenterController extends Controller
         $package->trackid = $request->input('trackid');
         $package->roomid = $request->input('roomid');
         $package->img = 'test' ;
-        $package->status = 0 ;
+        $package->status = 'ยังไม่รับ' ;
 
 
 
@@ -254,21 +285,24 @@ class RenterController extends Controller
     // }
 
     public function addRepair(Request $request){
-        $this->validate($request,
-            [
-                'type_repair' => 'required',
-                'day' => 'required',
-                'time' => 'required',
-                'img' => 'required',
-            ]
-        );
+        // $this->validate($request,
+        //     [
+        //         'type_repair' => 'required',
+        //         'day' => 'required',
+        //         'time' => 'required',
+        //         'img' => 'required',
+        //     ]
+        // );
 
         $repair = new repair();
         // $news->title = $request->input('title');
+        $repair->roomid = $request->input('roomid');
         $repair->type_repair = $request->input('type_repair');
         $repair->day = $request->input('day');
         $repair->time = $request->input('time');
-        $repair->img = 'test' ;
+        $repair->status = 'ยังไม่ได้ซ่อม';
+        $repair->img = 'test';
+
 
 
 
@@ -277,16 +311,34 @@ class RenterController extends Controller
         return redirect('/repair')->with('success','Save Success');
     }
 
-    public function search(Request $request){
+    // public function catagorize(Request $request){
 
+    //     $status = repair::select('status')->get();
+    //     return view('repair')->with('status',$status);
 
-    }
+    // }
 
 
     public function showrepair()
     {
 
-        $repairs = repair::Orderby('created_at','desc')->get();
+        $repairs = new repair();
+        if(request()->has('type_repair')){
+            $repairs = $repairs->where('type_repair', request('type_repair'));
+        }
+        $repairs = $repairs->get()->append([
+            'type_repair' => request('type_repair'),
+        ]);
+        return view('repair')->with('repairs', $repairs);
+
+
+
+        // if($repairs == null){
+        //     return view('repair')->with('repairs', 'ยังไม่มีรายการแจ้งซ่อมนี้');
+        // }
+
+        // $renters = Renter::select('roomid', 'firstname')->get();
+        $repairs = repair::Orderby('created_at','asc')->get();
         return view('repair')->with('repairs',$repairs);
     }
 
@@ -296,12 +348,31 @@ class RenterController extends Controller
         return view('complain')->with('renters', $renters);
     }
 
+    public function acceptRepair($id)
+    {
+        $accept = repair::find($id);
+        $accept->status="กำลังดำเนินการ";
+        $accept->save();
+
+        return redirect(Request::url());
+    }
 
     public function genbill()
     {
         $genbills = rent_bill::all();
         return view('liff.genbill')->with('genbills',$genbills);;
     }
+
+    public function destroy($id){
+
+
+        $package = Package::find($id);
+        $package->delete();
+
+        return redirect('/package')->with('success', 'Delete Success!');
+    }
+
+
 
 
 

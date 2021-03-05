@@ -13,12 +13,13 @@
             width: 100%;
         }
         .box{
-            position: fixed;
-            height: 100vh;
-            width: 500vh;
-            margin-left: 10vw;
+            /* position: fixed; */
+            height: fit-content;
+            width: 100%;
+            /* margin-left: 10vw; */
+            transform: translate(0px,100px);
             background-color: white;
-            margin-top: 20vh;
+            /* margin-top: 20vh; */
             border-radius: 10px;
         }
 
