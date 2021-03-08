@@ -387,7 +387,7 @@ class RenterController extends Controller
     $timestamp = $jsonData["events"][0]["timestamp"];
 
     //connect to mysql
-    $servername = "https://murmuring-peak-15503.herokuapp.com/";
+    $servername = "murmuring-peak-15503";
     $username = "b1fc6ec276658e";
     $password = "66d86aaa";
     $dbname = "heroku_32d195921bf0a64";
