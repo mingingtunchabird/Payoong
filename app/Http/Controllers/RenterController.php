@@ -360,7 +360,7 @@ class RenterController extends Controller
     public function genbill()
     {
         $genbills = rent_bill::all();
-        return view('liff.genbill')->with('genbills',$genbills);;
+        return view('liff.genbill')->with('genbills',$genbills);
     }
 
     public function destroy($id){

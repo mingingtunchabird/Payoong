@@ -59,7 +59,7 @@
     </head>
     <body>
     <div style="position: absolute;">
-        <img src="https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" width="1920" height="1080">
+        {{-- <img src="https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" width="100%" height="100%"> --}}
     </div>
 
         <div class="flex-center position-ref full-height">
@@ -76,7 +76,7 @@
                     @if (Route::has('login'))
                         <div class="links">
                             @auth
-                                <a href="{{ url('/home') }}" >Go to homepage</a>
+                                <a href="{{ url('/home') }}" style="color: #2B4161;  font-family: Mitr;" >Go to homepage</a>
                             @else
                                 <a href="{{ route('login') }}" class="btn btn-primary">ENTER WEBSITE</a>
                             @endauth

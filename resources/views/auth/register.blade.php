@@ -3,11 +3,67 @@
 
     <br>
     <br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" style="background-color: black; color: white;">{{ __('Register') }}</div>
+
+    <style>
+
+    body{
+        background-color: #F5F5F5;
+        font-family: Mitr-regular !important;
+    }
+
+    .btn-regis{
+    background-color: #2B4161;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10px;
+    text-align: center;
+    /* margin-left: 200px; */
+    left: 50%;
+    border: none;
+
+
+
+}
+
+    .parent{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: #ffffff;
+
+
+}
+
+.content-div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    width: 60%;
+    height: fit-content;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(160,160,160,0.33);
+    box-shadow: 0px 0px 15px 3px rgba(160,160,160,0.33);
+    /* text-align: center; */
+}
+
+    </style>
+
+
+
+<div class="parent">
+    <div class="content-div">
+        {{-- <div class="col-md-8"> --}}
+            {{-- <div class="card"> --}}
+                <div class="text-center">   <img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="250" height="50" style="margin-top: 70px;">
+                </div>
+
+                <div style="margin-left: 100px; width: 250px;">
+                    <h4 style="color: #2B4161; ">ลงทะเบียน</h4>
+                </div>
+
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -63,17 +119,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
+                        {{-- <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4"> --}}
+
+                                <div style="text-align: center">
+                                    <button type="submit" class="btn-regis">
+                                        {{ __('ลงทะเบียน') }}
+                                    </button>
+                                </div>
+
+                            {{-- </div>
+                        </div> --}}
                     </form>
-                </div>
-            </div>
-        </div>
+                {{-- </div> --}}
+            {{-- </div> --}}
+        {{-- </div> --}}
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
