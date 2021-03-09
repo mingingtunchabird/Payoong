@@ -61,7 +61,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 
-Route::get("/chatbot", function() { return redirect("chatbot.php"); });
+Route::get("/chatbot",  function() {
+    ob_start();
+    require(public_path("chatbot.php"));
+    return ob_get_clean();
+});
 
 
 
