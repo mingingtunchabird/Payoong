@@ -3,19 +3,6 @@
 use App\Http\Controllers\RenterController;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     //Alert::success('Success Title', 'Success Message');
     return view('welcome');
@@ -49,7 +36,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/recieved','PackageController@index')->name('packageRecieved');
     Route::get('/notrecieve','PackageController@index2')->name('notRecieved');
 
-
     Route::get('/repair','RenterController@showrepair');
     Route::post('/addRepair','RenterController@addRepair')->name('addRepair');
     Route::get('/accept/{id}/update','StatusController@update')->name('acceptRepair');
@@ -69,20 +55,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/package/{id}/destroy','PackageController@destroy')->name('destroy');
 
-    // Route::get('/chatbot','RenterController@chatbot')->name('chatbot');
 
-    // Route::get("/chatbot", function() {
-    //     ob_start();
-    //     require(path("public")."chatbot.php");
-    //     return ob_get_clean();
-    // });
-
-
-    Route::get("/chatbot", function() { return redirect("chatbot.php"); });
 
 
 
 });
+
+Route::get("/chatbot", function() { return redirect("chatbot.php"); });
 
 
 
