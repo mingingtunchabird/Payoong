@@ -71,11 +71,14 @@ Route::group(['middleware' => ['auth']], function () {
 
     // Route::get('/chatbot','RenterController@chatbot')->name('chatbot');
 
-    Route::get("/chatbot", function() {
-        ob_start();
-        require(path("public")."chatbot.php");
-        return ob_get_clean();
-    });
+    // Route::get("/chatbot", function() {
+    //     ob_start();
+    //     require(path("public")."chatbot.php");
+    //     return ob_get_clean();
+    // });
+
+
+    Route::get("/chatbot", function() { return Redirect("chatbot.php"); });
 
 
 
