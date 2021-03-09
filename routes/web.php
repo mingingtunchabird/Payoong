@@ -69,7 +69,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/package/{id}/destroy','PackageController@destroy')->name('destroy');
 
-    Route::get('/chatbot','RenterController@chatbot')->name('chatbot');
+    // Route::get('/chatbot','RenterController@chatbot')->name('chatbot');
+
+    Route::get("/chatbot", function() {
+        ob_start();
+        require(path("public")."chatbot.php");
+        return ob_get_clean();
+    });
 
 
 
