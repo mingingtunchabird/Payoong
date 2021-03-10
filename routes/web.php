@@ -12,7 +12,7 @@ Route::get('/', function () {
 Route::get('/hook', function () {
     //Alert::success('Success Title', 'Success Message');
     echo 2;
-    return view('welcome');
+    // return view('welcome');
 });
 
 Auth::routes();
