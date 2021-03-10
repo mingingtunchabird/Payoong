@@ -13,6 +13,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
 
     Route::get('/hook', 'HookController@index');
+
     Route::get('/search','HomeController@search')->name('search');
     //Route::resource('todo', 'HomeController');
     Route::get('/mywork', 'HomeController@mywork');
