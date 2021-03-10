@@ -126,7 +126,7 @@ Route::get('/hook2', function () {
     $timestamp = date('Y-m-d H:i:s');
 
     //connect to mysql
-    $servername = "murmuring-peak-15503";
+    $servername = "us-cdbr-east-03.cleardb.com";
     $username = "b1fc6ec276658e";
     $password = "66d86aaa";
     $dbname = "heroku_32d195921bf0a64";
