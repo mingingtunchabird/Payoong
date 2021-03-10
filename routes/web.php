@@ -63,6 +63,7 @@ Route::get('/hook', function () {
 
 //เก็บ ข้อมูลใน Table LOG
 $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','$LINEData','$timestamp')");
+$mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('2','','$timestamp')");
 //เรียกดูข้มูลใน Table Customer
 // $getUser = $mysql->query("SELECT * FROM `customer` WHERE `userID`='$userID'");
 // $getuserNum = $getUser->num_rows;
