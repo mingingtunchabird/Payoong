@@ -146,13 +146,6 @@ $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('2','','
 // //ปกติ LINE จะมอง Request ที่สมบูรณ์ จะต้องมีการส่ง Response Code เป็นเลข 200 กลับไปที่ LINE ด้วย ดังนั้น
 // //อย่าลืมส่งอันนี้ไปด้วยครับ
 // http_response_code(200);
-
-
-
-
-
-
-
 });
 
 Route::get('/hook2', function () {
