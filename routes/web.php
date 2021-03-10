@@ -8,10 +8,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/api', function () {
+    //Alert::success('Success Title', 'Success Message');
+    // return view('welcome');
+});
+
 // Route::get('/hook', 'HookController@index');
 Route::get('/hook', function () {
     //Alert::success('Success Title', 'Success Message');
     echo 2;
+    header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: *');
+header('Access-Control-Allow-Headers: *');
     // return view('welcome');
     $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
     $lineData['AccessToken'] = "sTkKc5lxIn4lRiXXOO70Yd3MBLft8VV3HbBGfY1ZN1Qtyzt0Sod0Yz4yWvJmXsNJ6m+T00no6Ru+5Dfe
