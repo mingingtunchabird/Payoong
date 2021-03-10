@@ -8,7 +8,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hook', 'HookController@index');
+// Route::get('/hook', 'HookController@index');
+Route::get('/hook', function () {
+    //Alert::success('Success Title', 'Success Message');
+    echo 2;
+    return view('welcome');
+});
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
