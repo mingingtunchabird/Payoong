@@ -8,11 +8,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/hook', 'HookController@index');
+
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
 
-    Route::get('/hook', 'HookController@index');
 
     Route::get('/search','HomeController@search')->name('search');
     //Route::resource('todo', 'HomeController');
