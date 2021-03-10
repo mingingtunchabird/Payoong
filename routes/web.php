@@ -20,10 +20,12 @@ Route::get('/hook', function () {
 
     $LINEData = file_get_contents('php://input');
     $jsonData = json_decode($LINEData,true);
-    $replyToken = $jsonData["events"][0]["replyToken"];
-    $userID = $jsonData["events"][0]["source"]["userId"];
-    $text = $jsonData["events"][0]["message"]["text"];
-    $timestamp = $jsonData["events"][0]["timestamp"];
+    // $replyToken = $jsonData["events"][0]["replyToken"];
+    // $userID = $jsonData["events"][0]["source"]["userId"];
+    // $text = $jsonData["events"][0]["message"]["text"];
+    // $timestamp = $jsonData["events"][0]["timestamp"];
+    $timestamp = date('Y-m-d H:i:s');
+
 
     //connect to mysql
     $servername = "murmuring-peak-15503";
@@ -60,55 +62,55 @@ Route::get('/hook', function () {
 }
 
 //เก็บ ข้อมูลใน Table LOG
-$mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('$userID','$text','$timestamp')");
+$mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','$LINEData','$timestamp')");
 //เรียกดูข้มูลใน Table Customer
-$getUser = $mysql->query("SELECT * FROM `customer` WHERE `userID`='$userID'");
-$getuserNum = $getUser->num_rows;
+// $getUser = $mysql->query("SELECT * FROM `customer` WHERE `userID`='$userID'");
+// $getuserNum = $getUser->num_rows;
 
 //ตรวจว่า พบข้อมูลจากการ Query หรือไม่
-if ($getuserNum == "0"){
-    //ไม่พบ
+// if ($getuserNum == "0"){
+//     //ไม่พบ
 
-    // ตรงนี้ป็นส่วนข้อความที่เราต้องการจะ Reply ครับ
-    //ตรงนี้เป็น Type ซึ่งผมจะส่งเป็น Text
-    $replyText["type"] = "text";
-    //ตรงนี้เป็น Text ที่เราต้องการจะ Reply ครับ
-    $replyText["text"] = "ติดยังนะ";
+//     // ตรงนี้ป็นส่วนข้อความที่เราต้องการจะ Reply ครับ
+//     //ตรงนี้เป็น Type ซึ่งผมจะส่งเป็น Text
+//     $replyText["type"] = "text";
+//     //ตรงนี้เป็น Text ที่เราต้องการจะ Reply ครับ
+//     $replyText["text"] = "ติดยังนะ";
 
-    // Note: ตรงส่วนนี้เราสามารถเเก้ไขให้เป็นข้อความประเภทอื่นๆได้เช่น
-    // Flex Message, Image, Sticker ครับลองไปปรับใช้กันดูนะครับ
+//     // Note: ตรงส่วนนี้เราสามารถเเก้ไขให้เป็นข้อความประเภทอื่นๆได้เช่น
+//     // Flex Message, Image, Sticker ครับลองไปปรับใช้กันดูนะครับ
 
-  } else {
-    //พบ
-    //นำข้อมูลมา Loop เพื่อเอาค่าออกมาใส่ตามตัวเเปรต่างๆ
-    while($row = $getUser->fetch_assoc()){
-      $Name = $row['Name'];
-      $Surname = $row['Surname'];
-      $customerID = $row['customerID'];
-    }
+//   } else {
+//     //พบ
+//     //นำข้อมูลมา Loop เพื่อเอาค่าออกมาใส่ตามตัวเเปรต่างๆ
+//     while($row = $getUser->fetch_assoc()){
+//       $Name = $row['Name'];
+//       $Surname = $row['Surname'];
+//       $customerID = $row['customerID'];
+//     }
 
-    //อธิบายอยู่ด้านบนครับ
-    $replyText["type"] = "text";
-    $replyText["text"] = "สวัสดีคุณ $Name $Surname (#$customerID)";
-  }
+//     //อธิบายอยู่ด้านบนครับ
+//     $replyText["type"] = "text";
+//     $replyText["text"] = "สวัสดีคุณ $Name $Surname (#$customerID)";
+//   }
 
-  $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
-  $lineData['AccessToken'] = "sTkKc5lxIn4lRiXXOO70Yd3MBLft8VV3HbBGfY1ZN1Qtyzt0Sod0Yz4yWvJmXsNJ6m+T00no6Ru+5DfeJeqFHg1LkFPqd7yg4RBCUFf7LYLQRwtTYWWk+wuhXuSeD0fF/nmePNZ/yJ4NpVdJVFn5ywdB04t89/1O/w1cDnyilFU=";
+//   $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
+//   $lineData['AccessToken'] = "sTkKc5lxIn4lRiXXOO70Yd3MBLft8VV3HbBGfY1ZN1Qtyzt0Sod0Yz4yWvJmXsNJ6m+T00no6Ru+5DfeJeqFHg1LkFPqd7yg4RBCUFf7LYLQRwtTYWWk+wuhXuSeD0fF/nmePNZ/yJ4NpVdJVFn5ywdB04t89/1O/w1cDnyilFU=";
 
-//สร้างตัวเเปรเป็น Array ที่มี replyToken ก่อน
-$replyJson["replyToken"] = $replyToken;
-//จากนั้นนำข้อความที่เราทำไว้ด้านบนลงมาใส่ในตัวเเปรนี้อีกที
-$replyJson["messages"][0] = $replyText;
-//เเละทำมันเป็น JSON Data ซะ
-$encodeJson = json_encode($replyJson);
+// //สร้างตัวเเปรเป็น Array ที่มี replyToken ก่อน
+// $replyJson["replyToken"] = $replyToken;
+// //จากนั้นนำข้อความที่เราทำไว้ด้านบนลงมาใส่ในตัวเเปรนี้อีกที
+// $replyJson["messages"][0] = $replyText;
+// //เเละทำมันเป็น JSON Data ซะ
+// $encodeJson = json_encode($replyJson);
 
-//ทำการเรียก Function sendMessage ที่เราเขียนไว้ด้านบน
-$results = sendMessage($encodeJson,$lineData);
-//เอา สิ่งที่ Function นี้ Return กลับมาดูเผื่อมันมี Error โดยการ echo มันออกมาเลยครับ
-echo $results;
-//ปกติ LINE จะมอง Request ที่สมบูรณ์ จะต้องมีการส่ง Response Code เป็นเลข 200 กลับไปที่ LINE ด้วย ดังนั้น
-//อย่าลืมส่งอันนี้ไปด้วยครับ
-http_response_code(200);
+// //ทำการเรียก Function sendMessage ที่เราเขียนไว้ด้านบน
+// $results = sendMessage($encodeJson,$lineData);
+// //เอา สิ่งที่ Function นี้ Return กลับมาดูเผื่อมันมี Error โดยการ echo มันออกมาเลยครับ
+// echo $results;
+// //ปกติ LINE จะมอง Request ที่สมบูรณ์ จะต้องมีการส่ง Response Code เป็นเลข 200 กลับไปที่ LINE ด้วย ดังนั้น
+// //อย่าลืมส่งอันนี้ไปด้วยครับ
+// http_response_code(200);
 
 
 
