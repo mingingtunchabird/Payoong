@@ -179,6 +179,41 @@ $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','','
 
 });
 
+Route::group(['middleware' => ['cors']], function () {
+    Route::get('/hook3', function () {
+        //Alert::success('Success Title', 'Success Message');
+        // return view('welcome');
+
+        $lineData['URL'] = "https://api.line.me/v2/bot/message/reply";
+        $lineData['AccessToken'] = "sTkKc5lxIn4lRiXXOO70Yd3MBLft8VV3HbBGfY1ZN1Qtyzt0Sod0Yz4yWvJmXsNJ6m+T00no6Ru+5Dfe
+        JeqFHg1LkFPqd7yg4RBCUFf7LYLQRwtTYWWk+wuhXuSeD0fF/nmePNZ/yJ4NpVdJVFn5ywdB04t89/1O/w1cDnyilFU=";
+        $LINEData = file_get_contents('php://input');
+        $jsonData = json_decode($LINEData,true);
+        // $replyToken = $jsonData["events"][0]["replyToken"];
+        // $userID = $jsonData["events"][0]["source"]["userId"];
+        // $text = $jsonData["events"][0]["message"]["text"];
+        // $timestamp = $jsonData["events"][0]["timestamp"];
+        $timestamp = date('Y-m-d H:i:s');
+
+
+        //connect to mysql
+        $servername = "us-cdbr-east-03.cleardb.com";
+        $username = "b1fc6ec276658e";
+        $password = "66d86aaa";
+        $dbname = "heroku_32d195921bf0a64";
+        $mysql = new mysqli($servername, $username, $password, $dbname);
+        mysqli_set_charset($mysql, "utf8");
+
+        if ($mysql->connect_error){
+            $errorcode = $mysql->connect_error;
+            print("MySQL(Connection)> ".$errorcode);
+        }
+
+    $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','$LINEData','$timestamp')");
+    $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('2','','$timestamp')");
+    });
+});
+
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
