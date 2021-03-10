@@ -45,21 +45,21 @@ Route::get('/hook', function () {
     // Function นี้เอาไว้ใช้สำหรับส่ง POST Request กลับไปที่ LINE โดยวิธีการใช้คือ
     // ตรง เรียก Function นี้โดยให้ค่า $replyJson เป็น JSON Data ที่จะส่งกลับไปที่ LINE
     // เเละ $sendInfo เป็น Array ที่มีค่า URL (ที่อยู่ที่จะส่งกลับไปที่ LINE [Reply,Push]) เเละ Accesstoken ใน Array นั้น
-    function sendMessage($replyJson, $sendInfo){
-        $ch = curl_init($sendInfo["URL"]);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Authorization: Bearer ' . $sendInfo["sTkKc5lxIn4lRiXXOO70Yd3MBLft8VV3HbBGfY1ZN1Qtyzt0Sod0Yz4yWvJmXsNJ6m+T00no6Ru+5DfeJeqFHg1LkFPqd7yg4RBCUFf7LYLQRwtTYWWk+wuhXuSeD0fF/nmePNZ/yJ4NpVdJVFn5ywdB04t89/1O/w1cDnyilFU="])
-            );
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $replyJson);
+    // function sendMessage($replyJson, $sendInfo){
+    //     $ch = curl_init($sendInfo["URL"]);
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    //     curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+    //     curl_setopt($ch, CURLOPT_POST, true);
+    //     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    //         'Content-Type: application/json',
+    //         'Authorization: Bearer ' . $sendInfo["sTkKc5lxIn4lRiXXOO70Yd3MBLft8VV3HbBGfY1ZN1Qtyzt0Sod0Yz4yWvJmXsNJ6m+T00no6Ru+5DfeJeqFHg1LkFPqd7yg4RBCUFf7LYLQRwtTYWWk+wuhXuSeD0fF/nmePNZ/yJ4NpVdJVFn5ywdB04t89/1O/w1cDnyilFU="])
+    //         );
+    //     curl_setopt($ch, CURLOPT_POSTFIELDS, $replyJson);
 
-        $result = curl_exec($ch);
-        curl_close($ch);
-	return $result;
-}
+    //     $result = curl_exec($ch);
+    //     curl_close($ch);
+	// return $result;
+// }
 
 //เก็บ ข้อมูลใน Table LOG
 $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','$LINEData','$timestamp')");
