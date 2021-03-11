@@ -70,7 +70,7 @@ class RenterController extends Controller
 
     public function adduser()
     {
-        //$rooms = room::where('status', 0);
+
         $rooms = room::where('status', 0)->get();
         return view('create')->with('rooms',$rooms);
 
@@ -102,7 +102,7 @@ class RenterController extends Controller
         $renter->nationality = $request->input('nationality');
         $renter->verify_code = $url;
 
-        //dd($renter);
+
         $renter->save();
         toast('เพิ่มลูกบ้านสำเร็จ','success')->autoClose(3000);
         return redirect('/home');
@@ -143,8 +143,6 @@ class RenterController extends Controller
         $renter->save();
         toast('เพิ่มบิลสำเร็จ','success')->autoClose(3000);
         return redirect('/add-bill');
-
-
     }
 
 
