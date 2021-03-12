@@ -185,7 +185,7 @@
                 <th scope="col" style="font-weight: lighter; text-align: center;">หัวข้อ</th>
                 <th scope="col" style="font-weight: lighter; text-align: center;">สถานะ</th>
                 <th scope="col" style="font-weight: lighter; text-align: center;">action</th>
-                <th scope="col" style="font-weight: lighter; text-align: center;">send text</th>
+                {{-- <th scope="col" style="font-weight: lighter; text-align: center;">send text</th> --}}
 
                 <th scope="col" style="font-weight: lighter;"></th>
 
@@ -226,9 +226,9 @@
 
                     <td style="text-align: center;">
                         <div class="d-flex">
-                            <div class="p-2">
+                            {{-- <div class="p-2">
                                 <input type="text" class="form-control bg-white" id="textcopy{{$repair->id}}" value="ห้อง {{$repair->roomid.' ' . $repair->type_repair}}เสร็จแล้วจ้า" readonly>
-                            </div>
+                            </div> --}}
 
                             {{-- <div class="p-2">
                                 <div class="input-group-append">
