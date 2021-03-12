@@ -230,13 +230,13 @@
                                 <input type="text" class="form-control bg-white" id="textcopy{{$repair->id}}" value="ห้อง {{$repair->roomid.' ' . $repair->type_repair}}เสร็จแล้วจ้า" readonly>
                             </div>
 
-                            <div class="p-2">
+                            {{-- <div class="p-2">
                                 <div class="input-group-append">
                                     <button id="copyBtn{{$repair->id}}" class="btn btn-warning" onclick="copy(this)" type="button" value="{{$repair->id}}">
                                         copy
                                     </button>
                                 </div>
-                            </div>
+                            </div> --}}
 
 
 
