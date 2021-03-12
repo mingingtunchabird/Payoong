@@ -223,7 +223,7 @@
                     @if ($repair->status == "ซ่อมแล้ว")
                     <td style="text-align: center;">
 
-                        <button id="myBtn2" class="btn btn-success" type="submit">แจ้งเตือน</button>
+                        <button id="myBtn2" class="btn btn-success" onclick="{{$repair->roomid}}" type="submit">แจ้งเตือน</button>
 
                     </td>
                     @endif
@@ -245,25 +245,7 @@
                     @endif
 
                     @if($repair->status == "ซ่อมแล้ว")
-                    {{-- <td style="text-align: center;">
-                        <div class="d-flex">
-                            <div class="p-2">
-                                <input type="text" class="form-control bg-white" id="textcopy{{$repair->id}}" value="ห้อง {{$repair->roomid.' ' . $repair->type_repair}}สำเร็จแล้วค่ะ" readonly>
-                            </div>
 
-                            <div class="p-2">
-                                <div class="input-group-append">
-                                    <button id="copyBtn{{$repair->id}}" class="btn btn-outline-warning" onclick="copy(this)" type="button" value="{{$repair->id}}">
-                                        copy
-                                    </button>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-                    </td> --}}
                     @endif
 
                 </tr>
