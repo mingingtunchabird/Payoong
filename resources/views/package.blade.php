@@ -265,16 +265,11 @@
                             </select>
                         </div>
 
-                        {{--                        <div class="form-group col-12/">--}}
-                        {{--                            <label for="exampleFormControlInput1">ค่าบำรุงหอพัก</label>--}}
-                        {{--                            <select class="form-control" name="rent_price">--}}
-                        {{--                                <option>5000</option>--}}
-                        {{--                            </select>--}}
-                        {{--                        </div>--}}
-
+                        @foreach($packages as $package)
                         <div class="form-group col-12 text-center mt-4">
-                            <button type="submit" class="btn col-6" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
+                            <button type="submit" class="btn col-6" onclick="reply2('{{$packages->roomid}}')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
                         </div>
+                        @endforeach
 
 
                     </div>
@@ -313,6 +308,25 @@
                     modal.style.display = "none";
                 }
             }
+        </script>
+
+        <script>
+
+        function reply2(roomid){
+        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply", {
+            roomid: roomid
+        },
+            function (data, textStatus, jqXHR) {
+                console.log(data)
+                if(data == '1'){
+                    swal("แจ้งเตือนเรียบร้อย", "ส่งแจ้งเตือนให้ลูกบ้านเรียบร้อยแล้ว", "success")
+                }else{
+                    swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ ไม่ได้ลงทะเบียนหรือเปล่านะ!", "error")
+                }
+            },
+        );
+    }
+
         </script>
 
 
