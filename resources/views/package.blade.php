@@ -267,7 +267,7 @@
 
 
                         <div class="form-group col-12 text-center mt-4">
-                            <button type="submit" class="btn col-6" onclick="reply2('{{$package->roomid}}')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
+                            <button type="submit" class="btn col-6" onclick="reply('{{$package->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
                         </div>
 
 
@@ -312,9 +312,10 @@
 
         <script>
 
-        function reply2(roomid){
-        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply", {
+        function reply(roomid, msg){
+        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply3", {
             roomid: roomid
+            msg: msg
         },
             function (data, textStatus, jqXHR) {
                 console.log(data)
