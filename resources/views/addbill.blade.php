@@ -435,11 +435,6 @@
         ]
       }
     ]
-  },
-  "styles": {
-    "footer": {
-      "separator": false
-    }
   }
 }
         },
