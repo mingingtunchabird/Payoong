@@ -152,13 +152,13 @@
         <table class="table">
             <thead class="thead-dark" style="font-family: Mitr-Regular;">
             <tr>
-                <th scope="col" style="font-weight: lighter;">ห้อง</th>
-                <th scope="col" style="font-weight: lighter;">หน่วยที่ใช้น้ำ</th>
-                <th scope="col" style="font-weight: lighter;">หน่วยที่ใช้ไฟ</th>
-                <th scope="col" style="font-weight: lighter;">ค่าเช่าห้อง</th>
-                <th scope="col" style="font-weight: lighter;">ยอดรวม</th>
-                <th scope="col" style="font-weight: lighter;">สถานะ</th>
-                <th scope="col" style="font-weight: lighter;">action</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">ห้อง</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">หน่วยที่ใช้น้ำ</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">หน่วยที่ใช้ไฟ</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">ค่าเช่าห้อง</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">ยอดรวม</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">สถานะ</th>
+                <th scope="col" style="font-weight: lighter; text-align: center;">action</th>
 
             </tr>
             </thead>
@@ -168,13 +168,13 @@
 
             @foreach($todos as $todo)
             <tr style="font-family: Mitr-Regular; font-weight: lighter;">
-                <td>{{$todo->roomid}}</td>
-                <td> {{$todo->elec_price}} หน่วย </td>
-                <td> {{$todo->pumb_price}} หน่วย </td>
-               <td> {{$todo->rent_price}} บาท </td>
-                <td>{{$todo->total}} บาท </td>
-                <td>{{$todo->status}}</td>
-                <td>
+                <td style="text-align: center;">{{$todo->roomid}}</td>
+                <td style="text-align: center;"> {{$todo->elec_price}} หน่วย </td>
+                <td style="text-align: center;"> {{$todo->pumb_price}} หน่วย </td>
+                <td style="text-align: center;"> {{$todo->rent_price}} บาท </td>
+                <td style="text-align: center;">{{$todo->total}} บาท </td>
+                <td style="text-align: center;">{{$todo->status}}</td>
+                <td style="text-align: center;">
                     <button id="myBtn2" class="btn btn-success" type="submit">ส่งบิล</button>
 
                 </td>
