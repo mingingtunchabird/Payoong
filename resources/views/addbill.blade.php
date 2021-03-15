@@ -319,11 +319,11 @@
         }
 
 
-        function reply(roomid, pumb_rate, elec_rate, rent_price, total, flex){
+        function reply(roomid, pumb_price, elec_price, rent_price, total, flex){
         $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
             roomid: roomid,
-            pumb_rate: pumb_rate,
-            elec_rate: elec_rate,
+            pumb_price: pumb_price,
+            elec_price: elec_price,
             rent_price: rent_price,
             total: total,
             flex: {
