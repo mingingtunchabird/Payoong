@@ -488,8 +488,7 @@
                 "type": "text",
                 "text": "QR CODE",
                 "size": "xs",
-                "color": "#000000",
-                "flex": 0
+                "color": "#000000"
               },
               {
                 "type": "image",
