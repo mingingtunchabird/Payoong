@@ -368,7 +368,7 @@
               },
               {
                 "type": "text",
-                "text": pumb_price," หน่วย"
+                "text": pumb_price " หน่วย",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -387,7 +387,7 @@
               },
               {
                 "type": "text",
-                "text": elec_price," หน่วย"
+                "text": elec_price " หน่วย",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -406,7 +406,7 @@
               },
               {
                 "type": "text",
-                "text": rent_price," บาท"
+                "text": rent_price " บาท",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -429,7 +429,7 @@
               },
               {
                 "type": "text",
-                "text": total," บาท"
+                "text": total " บาท",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
