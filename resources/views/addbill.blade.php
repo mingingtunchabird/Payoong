@@ -175,8 +175,7 @@
                 <td style="text-align: center;">{{$todo->total}} บาท </td>
                 <td style="text-align: center;">{{$todo->status}}</td>
                 <td style="text-align: center;">
-                    <button id="myBtn2" class="btn btn-success" type="submit">ส่งบิล</button>
-
+                    <button id="myBtn2" class="btn btn-success" onclick="reply('{{$todo->roomid}}')" type="submit">ส่งบิล</button>
                 </td>
             </tr>
             @endforeach
@@ -318,7 +317,149 @@
                 modal.style.display = "none";
             }
         }
+
+
+        function reply(roomid, flex){
+        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply", {
+            roomid: roomid,
+            flex: {
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ใบแจ้งหนี้",
+        "weight": "bold",
+        "color": "#1DB446",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "บิลเดือนนี้มาแล้ว!",
+        "weight": "bold",
+        "size": "xxl",
+        "margin": "md"
+      },
+      {
+        "type": "separator",
+        "margin": "xxl"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "xxl",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "หน่วยค่าน้ำที่ใช้",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$2.99",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "หน่วยค่าไฟที่ใช้",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$0.99",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ค่าเช่าห้อง",
+                "size": "sm",
+                "color": "#555555",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "$3.33",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "xxl"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "ยอดรวม",
+                "size": "sm",
+                "color": "#555555"
+              },
+              {
+                "type": "text",
+                "text": "$0.69",
+                "size": "sm",
+                "color": "#111111",
+                "align": "end"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "styles": {
+    "footer": {
+      "separator": true
+    }
+  }
+}
+        },
+            function (data, textStatus, jqXHR) {
+                console.log(data)
+                if(data == '1'){
+                    swal("แจ้งเตือนเรียบร้อย", "ส่งแจ้งเตือนให้ลูกบ้านเรียบร้อยแล้ว", "success")
+                }else{
+                    swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ ไม่ได้ลงทะเบียนหรือเปล่านะ!", "error")
+                }
+            },
+        );
+    }
     </script>
+
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
