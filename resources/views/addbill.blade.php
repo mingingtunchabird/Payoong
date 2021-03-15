@@ -158,6 +158,7 @@
                 <th scope="col" style="font-weight: lighter;">ค่าเช่าห้อง</th>
                 <th scope="col" style="font-weight: lighter;">ยอดรวม</th>
                 <th scope="col" style="font-weight: lighter;">สถานะ</th>
+                <th scope="col" style="font-weight: lighter;">action</th>
 
             </tr>
             </thead>
@@ -173,6 +174,10 @@
                <td> {{$todo->rent_price}} บาท </td>
                 <td>{{$todo->total}} บาท </td>
                 <td>{{$todo->status}}</td>
+                <td>
+                    <button id="myBtn2" class="btn btn-success" type="submit">ส่งบิล</button>
+
+                </td>
             </tr>
             @endforeach
             @endif
