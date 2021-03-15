@@ -448,8 +448,7 @@
                 "type": "text",
                 "text": "เลขที่บัญชี",
                 "size": "xs",
-                "color": "#aaaaaa",
-                "flex": 0
+                "color": "#aaaaaa"
               },
               {
                 "type": "text",
@@ -468,8 +467,7 @@
                 "type": "text",
                 "text": "หมายเลขพร้อมเพย์",
                 "size": "xs",
-                "color": "#aaaaaa",
-                "flex": 0
+                "color": "#aaaaaa"
               },
               {
                 "type": "text",
