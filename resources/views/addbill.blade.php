@@ -360,8 +360,7 @@
                 "type": "text",
                 "text": "หน่วยค่าน้ำที่ใช้",
                 "size": "sm",
-                "color": "#555555",
-                "flex": 0
+                "color": "#555555"
               },
               {
                 "type": "text",
@@ -380,8 +379,7 @@
                 "type": "text",
                 "text": "หน่วยค่าไฟที่ใช้",
                 "size": "sm",
-                "color": "#555555",
-                "flex": 0
+                "color": "#555555"
               },
               {
                 "type": "text",
@@ -400,8 +398,7 @@
                 "type": "text",
                 "text": "ค่าเช่าห้อง",
                 "size": "sm",
-                "color": "#555555",
-                "flex": 0
+                "color": "#555555"
               },
               {
                 "type": "text",
