@@ -438,7 +438,7 @@
   },
   "styles": {
     "footer": {
-      "separator": true
+      "separator": false
     }
   }
 }
