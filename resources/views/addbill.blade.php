@@ -320,7 +320,7 @@
 
 
         function reply(roomid, flex){
-        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply", {
+        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
             roomid: roomid,
             flex: {
   "type": "bubble",
