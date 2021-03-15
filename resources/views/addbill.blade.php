@@ -437,7 +437,23 @@
             ]
           }
         ]
-      }
+      },
+      {
+        "type": "separator",
+        "margin": "xxl"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "PAYMENT ID",
+            "size": "xs",
+            "color": "#aaaaaa",
+            "flex": 0
+          }
     ]
   }
 }
