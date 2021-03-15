@@ -420,6 +420,8 @@
           {
             "type": "box",
             "layout": "horizontal",
+            "margin": "xxl",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
@@ -443,6 +445,8 @@
           {
             "type": "box",
             "layout": "horizontal",
+            "margin": "xxl",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
