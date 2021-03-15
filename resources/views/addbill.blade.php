@@ -175,7 +175,7 @@
                 <td style="text-align: center;">{{$todo->total}} บาท </td>
                 <td style="text-align: center;">{{$todo->status}}</td>
                 <td style="text-align: center;">
-                    <button id="myBtn2" class="btn btn-success" onclick="reply('{{$todo->roomid}}')" type="submit">ส่งบิล</button>
+                    <button id="myBtn2" class="btn btn-success" onclick="reply('{{$todo->roomid}},{{$todo->pumb_price}},{{$todo->elec_price}},{{$todo->rent_price}},{{$todo->total}}')" type="submit">ส่งบิล</button>
                 </td>
             </tr>
             @endforeach
@@ -319,9 +319,13 @@
         }
 
 
-        function reply(roomid, flex){
+        function reply(roomid, pumb_rate, elec_rate, rent_price, total, flex){
         $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
             roomid: roomid,
+            pumb_rate: pumb_rate,
+            elec_rate: elec_rate,
+            rent_price: rent_price,
+            total: total,
             flex: {
   "type": "bubble",
   "body": {
@@ -364,7 +368,7 @@
               },
               {
                 "type": "text",
-                "text": "$2.99",
+                "text": pumb_rate,
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -383,7 +387,7 @@
               },
               {
                 "type": "text",
-                "text": "$0.99",
+                "text": elec_rate,
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -402,7 +406,7 @@
               },
               {
                 "type": "text",
-                "text": "$3.33",
+                "text": rent_price,
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -425,7 +429,7 @@
               },
               {
                 "type": "text",
-                "text": "$0.69",
+                "text": total,
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
