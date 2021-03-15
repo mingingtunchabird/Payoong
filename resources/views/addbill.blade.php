@@ -400,13 +400,13 @@
             "contents": [
               {
                 "type": "text",
-                "text": rent_price+"ค่าเช่าห้อง",
+                "text": "ค่าเช่าห้อง",
                 "size": "sm",
                 "color": "#555555"
               },
               {
                 "type": "text",
-                "text": " บาท",
+                "text": rent_price+" บาท",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -432,68 +432,6 @@
                 "text": total+" บาท",
                 "size": "sm",
                 "color": "#111111",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "separator",
-            "margin": "xxl"
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "เลขที่บัญชี",
-                "size": "xs",
-                "color": "#aaaaaa",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "0911871629",
-                "color": "#000000",
-                "size": "xs",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "หมายเลขพร้อมเพย์",
-                "size": "xs",
-                "color": "#aaaaaa",
-                "flex": 0
-              },
-              {
-                "type": "text",
-                "text": "093-159-4441",
-                "color": "#000000",
-                "size": "xs",
-                "align": "end"
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-              {
-                "type": "text",
-                "text": "QR CODE",
-                "size": "xs",
-                "color": "#000000",
-                "flex": 0
-              },
-              {
-                "type": "image",
-                "url": "https://sv1.picz.in.th/images/2021/03/15/DZ7k7E.jpg?resize=906,1024",
                 "align": "end"
               }
             ]
