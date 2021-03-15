@@ -368,7 +368,7 @@
               },
               {
                 "type": "text",
-                "text": pumb_rate,
+                "text": pumb_price,
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
@@ -387,7 +387,7 @@
               },
               {
                 "type": "text",
-                "text": elec_rate,
+                "text": elec_price,
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
