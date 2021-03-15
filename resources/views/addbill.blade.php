@@ -430,6 +430,7 @@
               {
                 "type": "text",
                 "text": total,
+                "text": " บาท",
                 "size": "sm",
                 "color": "#111111",
                 "align": "end"
