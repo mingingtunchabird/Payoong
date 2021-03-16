@@ -42,15 +42,12 @@
 
 <div class="container-fluid">
   <div class="row">
-  <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="50"></div>
+  <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="47"></div>
   <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
 
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
-    <h1  style="font-size:1.4rem; margin-right:45px; color: #709EF9; "> ยอดรวม </h1>
-    <h1  style="font-size:1rem; margin-right:80px; "></h1>
-    <h1  style="font-size:1rem; margin-right:50px; "></h1>
-    <h1  style="font-size:1.4rem; color: #709EF9; "></h1>
+    <input type="file" name="img_src" class="from-control">
   </div>
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
