@@ -363,6 +363,15 @@ class RenterController extends Controller
         // return view('liff.genbill')->with('genbills',$genbills);
     }
 
+
+    public function save_image(Request $request){
+        if($request->hasFile('img_src')){
+
+        }else{
+            return redirect('liff.genbill')->with('msg', 'Please choose file.');
+        }
+    }
+
     public function destroy($id){
 
 
