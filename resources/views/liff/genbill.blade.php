@@ -43,45 +43,8 @@
 <div class="container-fluid">
   <div class="row">
   <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="50"></div>
-  <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพหลักฐานการโอนเงิน</h1></div>
+  <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
 
-  <div class="col-xs-6 col-md-4 mt-3">
-        <h1 style="font-size:1rem; color: #709EF9;">เจ้าหน้าที่หอพัก สดใสชัยชนะ</h1>
-  </div>
-
-  <div class="col-xs-6 col-md-4 mt-3">
-        <h1 style="font-size:1rem;">ชื่อลูกค้า / Name : </h1>
-        <h1 style="font-size:1rem;">ใบแจ้งหนี้ / INVOICE :</h1>
-        <h1 style="font-size:1rem;">วันที่ / DATE : </h1>
-  </div>
-
-  <div class="col-xs-6 col-md-4 mt-4  text-center d-inline-flex">
-    <h1  style="font-size:1rem; margin-right:19px; color: #709EF9;">รายการ </h1>
-    <h1  style="font-size:1rem; margin-right:19px; color: #709EF9;">ราคา/หน่วย</h1>
-    <h1  style="font-size:1rem; margin-right:19px; color: #709EF9;">หน่วยที่ใช้ไป</h1>
-    <h1  style="font-size:1rem; margin-right:19px; color: #709EF9;">ยอดรวม</h1>
-  </div>
-  @foreach($genbills as $genbill)
-  <div class="col-xs-6 col-md-4 mt-3  text-center d-inline-flex">
-    <h1  style="font-size:1rem; margin-right:50px; ">ค่าน้ำประปา </h1>
-    <h1  style="font-size:1rem; margin-right:80px; ">{{ $genbill -> pumb_rate }}</h1>
-    <h1  style="font-size:1rem; margin-right:50px; ">{{ $genbill -> pumb_price }}</h1>
-    <h1  style="font-size:1rem;  ">{{ $genbill -> pumb_rate * $genbill -> pumb_price}}</h1>
-  </div>
-
-  <div class="col-xs-6 col-md-4 mt-3  text-center d-inline-flex">
-    <h1  style="font-size:1rem; margin-right:70px; ">ค่าไฟฟ้า </h1>
-    <h1  style="font-size:1rem; margin-right:70px; ">{{ $genbill -> elec_rate }}</h1>
-    <h1  style="font-size:1rem; margin-right:40px; ">{{ $genbill -> elec_price }}</h1>
-    <h1  style="font-size:1rem;  ">{{ $genbill -> elec_rate * $genbill -> elec_price}}</h1>
-  </div>
-
-  <div class="col-xs-6 col-md-4 mt-3  text-center d-inline-flex">
-    <h1  style="font-size:1rem; margin-right:45px; "> ค่าหอพัก </h1>
-    <h1  style="font-size:1rem; margin-right:80px; ">{{ $genbill -> rent_price }}</h1>
-    <h1  style="font-size:1rem; margin-right:50px; "> - </h1>
-    <h1  style="font-size:1rem;  ">{{ $genbill -> rent_price }}</h1>
-  </div>
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
     <h1  style="font-size:1.4rem; margin-right:45px; color: #709EF9; "> ยอดรวม </h1>
@@ -94,7 +57,7 @@
             <button style="width:100%; height:50px; border-radius:70px;" class="btn btn-primary" type="submit" > <p style="font-size:1.2rem; margin-top:3px;">ดาวน์โหลดใบแจ้งหนี้</p></button>
     </div>
 
-  @endforeach
+
   </div>
 </div>
 
