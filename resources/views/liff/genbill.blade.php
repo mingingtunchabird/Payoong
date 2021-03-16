@@ -47,6 +47,8 @@
   <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="45"></div>
   <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
 
+  <hr>
+
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
     <input type="file" name="img_src" class="from-control">
