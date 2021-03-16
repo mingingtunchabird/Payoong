@@ -50,7 +50,7 @@
     <h1  style="font-size:1.4rem; margin-right:45px; color: #709EF9; "> ยอดรวม </h1>
     <h1  style="font-size:1rem; margin-right:80px; "></h1>
     <h1  style="font-size:1rem; margin-right:50px; "></h1>
-    <h1  style="font-size:1.4rem; color: #709EF9; ">{{ $genbill -> total }}</h1>
+    <h1  style="font-size:1.4rem; color: #709EF9; "></h1>
   </div>
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
