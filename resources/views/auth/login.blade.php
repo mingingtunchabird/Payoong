@@ -70,7 +70,7 @@ body{
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     width: 30vw;
-    height: 75vh;
+    height: fit-content;
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 15px 3px rgba(160,160,160,0.33);
     box-shadow: 0px 0px 15px 3px rgba(160,160,160,0.33);
