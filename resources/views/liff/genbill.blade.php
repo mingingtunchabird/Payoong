@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BILL</title>
+    <title>UPLOAD RECIEPT</title>
 </head>
 <body>
 
@@ -43,11 +43,10 @@
 <div class="container-fluid">
   <div class="row">
   <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="50"></div>
-  <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px;">บิลค่าหอพัก</h1></div>
+  <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพหลักฐานการโอนเงิน</h1></div>
 
   <div class="col-xs-6 col-md-4 mt-3">
         <h1 style="font-size:1rem; color: #709EF9;">เจ้าหน้าที่หอพัก สดใสชัยชนะ</h1>
-        <h1 style="font-size:1rem">ที่อยู่</h1>
   </div>
 
   <div class="col-xs-6 col-md-4 mt-3">
