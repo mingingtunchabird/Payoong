@@ -51,7 +51,7 @@
 
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
-    <input type="file" name="img_src" class="from-control">
+    <input style="text-align: center;" type="file" name="img_src" class="from-control">
   </div>
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
