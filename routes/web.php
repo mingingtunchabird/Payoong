@@ -172,6 +172,9 @@ $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','','
 
 });
 
+    Route::get('/genbill','RenterController@upload');
+    Route::post('/genbill','RenterController@save');
+
 Route::group(['middleware' => ['cors']], function () {
     Route::get('/hook3', function () {
         //Alert::success('Success Title', 'Success Message');
@@ -246,8 +249,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/repairDone','StatusController@index2')->name('doneRepair');
 
-    Route::get('/genbill','RenterController@upload');
-    Route::post('/genbill','RenterController@save');
+
 
     Route::get('/complain', 'RenterController@complain' );
     Route::post('/addComplain','RenterController@addComplain')->name('addComplain');
