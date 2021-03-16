@@ -221,7 +221,7 @@
                     @if ($repair->status == "ซ่อมแล้ว")
                     <td style="text-align: center;">
 
-                        <button id="myBtn2" class="btn btn-success" onclick="reply('{{$repair->roomid}}' ,'ซ่อมแล้วจ้า')" type="submit">แจ้งเตือน</button>
+                        <button id="myBtn2" class="btn btn-success" onclick="reply('{{$repair->roomid}}' ,'ซ่อมเสร็จแล้วจ้า')" type="submit">แจ้งเตือน</button>
 
                     </td>
 
