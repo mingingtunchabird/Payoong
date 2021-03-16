@@ -45,7 +45,7 @@
   <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
 
 
-  <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 custom-file">
+  <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
     <input type="file" name="img_src" class="from-control">
   </div>
 
