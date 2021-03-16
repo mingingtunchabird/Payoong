@@ -246,8 +246,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/repairDone','StatusController@index2')->name('doneRepair');
 
-    Route::get('/upBill','RenterController@genbill');
-    Route::post('/upBill','RenterController@save');
+    Route::get('/genbill','RenterController@upload');
+    Route::post('/genbill','RenterController@save');
 
     Route::get('/complain', 'RenterController@complain' );
     Route::post('/addComplain','RenterController@addComplain')->name('addComplain');
