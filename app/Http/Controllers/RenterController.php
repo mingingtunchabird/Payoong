@@ -355,10 +355,12 @@ class RenterController extends Controller
         return redirect(Request::url());
     }
 
-    public function genbill()
+    public function upload()
     {
-        $genbills = rent_bill::all();
-        return view('liff.genbill')->with('genbills',$genbills);
+
+        return view('liff.genbill');
+        // $genbills = rent_bill::all();
+        // return view('liff.genbill')->with('genbills',$genbills);
     }
 
     public function destroy($id){

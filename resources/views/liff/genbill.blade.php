@@ -51,7 +51,7 @@
   </div>
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
-            <button style="width:100%; height:50px; border-radius:70px;" class="btn btn-primary" type="submit" > <p style="font-size:1.2rem; margin-top:3px;">ดาวน์โหลดใบแจ้งหนี้</p></button>
+            <button style="width:100%; height:50px; border-radius:70px;" class="btn btn-primary" type="submit" > <p style="font-size:1.2rem; margin-top:3px;">UPLOAD</p></button>
     </div>
 
 
