@@ -439,6 +439,7 @@
             "contents": [
               {
                 "type": "text",
+                "weight": "bold",
                 "text": total+" บาท",
                 "size": "xxl",
                 "color": "#1DB446",
