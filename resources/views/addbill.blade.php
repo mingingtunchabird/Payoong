@@ -507,7 +507,7 @@
             "contents": [
               {
                 "type": "image",
-                "url": "https://sv1.picz.in.th/images/2021/03/15/DZ7k7E.jpg?resize=906,1024",
+                "url": qr,
                 "align": "center",
                 "size": "xxl"
               }
