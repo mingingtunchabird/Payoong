@@ -380,7 +380,7 @@ class RenterController extends Controller
 
         // return view('liff.genbill');
         // $genbills = rent_bill::all();
-        return view('liff.closetab')->with('img', $response);
+        return redirect('liff.closetab')->with('img', $response);
     }
 
 
