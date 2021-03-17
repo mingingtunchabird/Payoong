@@ -355,7 +355,7 @@ class RenterController extends Controller
         return redirect(Request::url());
     }
 
-    public function upload(Request $request)
+    public function upbill(Request $request)
     {
 
         $this->validate($request,[

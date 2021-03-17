@@ -172,7 +172,7 @@ $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','','
 
 });
 
-    Route::get('/genbill','RenterController@upload')->name('genbill');
+    Route::get('/genbill','RenterController@upbill')->name('genbill');
     // Route::post('/genbill','RenterController@save');
 
 Route::group(['middleware' => ['cors']], function () {
