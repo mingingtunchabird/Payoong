@@ -373,6 +373,7 @@ class RenterController extends Controller
 
         $img = new ConfirmPayment();
         $img->img = "uploads/".$filename;
+        $img->save();
 
         // return view('liff.genbill');
         // $genbills = rent_bill::all();
