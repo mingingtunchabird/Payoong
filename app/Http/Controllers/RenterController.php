@@ -11,6 +11,7 @@ use App\setting;
 use App\package;
 use App\repair;
 use App\complain;
+use App\ConfirmPayment;
 use Illuminate\Support\Facades\DB;
 // use App\filters;
 
@@ -359,16 +360,15 @@ class RenterController extends Controller
     {
 
         $this->validate($request,[
-            'isbn' => 'required',
-            'message' => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
+            'img' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
         ]);
 
-        $filename = time().'.'.$request->image->extension();
-        $file = $request->file('image');
-        $file->move(public_path('Upload'),$filename);
+        $filename = time().'.'.$request->img->extension();
+        $file = $request->file('img');
+        $file->move(public_path('uploads'),$filename);
 
-        $file->image = "uploads/".$filename;
+        $img = new ConfirmPayment();
+        $img->img = "uploads/".$filename;
 
         // return view('liff.genbill');
         // $genbills = rent_bill::all();
