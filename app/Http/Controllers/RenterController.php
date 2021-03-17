@@ -11,7 +11,7 @@ use App\setting;
 use App\package;
 use App\repair;
 use App\complain;
-use App\ConfirmPayment;
+// use App\ConfirmPayment;
 use Illuminate\Support\Facades\DB;
 // use App\filters;
 
@@ -371,9 +371,10 @@ class RenterController extends Controller
         $file = $request->file('image');
         $file->move(public_path('uploads'),$filename);
 
-        $img = new ConfirmPayment();
-        $img->img = "uploads/".$filename;
-        $img->save();
+        // $img = new ConfirmPayment();
+        $img = "uploads/".$filename;
+        DB::insert('insert into confirm_payments (img) values (?)', [$img]);
+
 
         // return view('liff.genbill');
         // $genbills = rent_bill::all();
