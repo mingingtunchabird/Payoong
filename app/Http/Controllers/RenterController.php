@@ -356,15 +356,19 @@ class RenterController extends Controller
         return redirect(Request::url());
     }
 
-    public function upbill(Request $request)
+    public function upbill(){
+        return view('genbill');
+    }
+
+    public function storebill(Request $request)
     {
 
         $this->validate($request,[
-            'img' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
+            'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
         ]);
 
-        $filename = time().'.'.$request->img->extension();
-        $file = $request->file('img');
+        $filename = time().'.'.$request->image->extension();
+        $file = $request->file('image');
         $file->move(public_path('uploads'),$filename);
 
         $img = new ConfirmPayment();

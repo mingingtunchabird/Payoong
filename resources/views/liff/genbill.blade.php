@@ -47,24 +47,26 @@
   <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="42"></div>
   <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
 
+  <form action="{{ route('storebill') }}" method="post">
+    <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
+        <p class="font-weight-bold">รูปภาพ <span class="text-red">*</span></p>
+        <div class="custom-file rounded-50">
+            <input type="file" class="custom-file-input" id="customFile" name="image">
+            <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
+            <img id="blah" src="#" alt="book image" class="preview-img mt-3 rounded-nm"/>
+        </div>
+      </div>
+
+      <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
+                <button style="width:100%; height:50px; border-radius:70px;" class="btn btn-primary" type="submit" > <p style="font-size:1.2rem; margin-top:3px;">UPLOAD</p></button>
+        </div>
+
+
+      </div>
+    </form>
 
 
 
-  <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
-    <p class="font-weight-bold">รูปภาพ <span class="text-red">*</span></p>
-    <div class="custom-file rounded-50">
-        <input type="file" class="custom-file-input" id="customFile" name="image">
-        <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
-        <img id="blah" src="#" alt="book image" class="preview-img mt-3 rounded-nm"/>
-    </div>
-  </div>
-
-  <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
-            <button style="width:100%; height:50px; border-radius:70px;" class="btn btn-primary" type="submit" > <p style="font-size:1.2rem; margin-top:3px;">UPLOAD</p></button>
-    </div>
-
-
-  </div>
 </div>
 
 

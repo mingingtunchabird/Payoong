@@ -148,31 +148,11 @@ $mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('2','','
 // http_response_code(200);
 });
 
-Route::get('/hook2', function () {
 
 
-    $timestamp = date('Y-m-d H:i:s');
-
-    //connect to mysql
-    $servername = "us-cdbr-east-03.cleardb.com";
-    $username = "b1fc6ec276658e";
-    $password = "66d86aaa";
-    $dbname = "heroku_32d195921bf0a64";
-    $mysql = new mysqli($servername, $username, $password, $dbname);
-    mysqli_set_charset($mysql, "utf8");
-
-    if ($mysql->connect_error){
-        $errorcode = $mysql->connect_error;
-        print("MySQL(Connection)> ".$errorcode);
-    }
-
-//เก็บ ข้อมูลใน Table LOG
-$mysql->query("INSERT INTO `log`(`userID`, `text`, `timestamp`) VALUES ('1','','$timestamp')");
-
-
-});
 
     Route::get('/genbill','RenterController@upbill')->name('genbill');
+    Route::post('/genbill','RenterController@storebill')->name('storebill');
     // Route::post('/genbill','RenterController@save');
 
 Route::group(['middleware' => ['cors']], function () {
