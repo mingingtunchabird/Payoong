@@ -325,8 +325,11 @@
         },
             function (data, textStatus, jqXHR) {
                 var qr = data
+                console.log(qr);
+            },
+        );
 
-                $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
+        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
             roomid: roomid,
             pumb_price: pumb_price,
             elec_price: elec_price,
@@ -503,7 +506,7 @@
             "contents": [
               {
                 "type": "image",
-                "url": qr,
+                "url": "https://sv1.picz.in.th/images/2021/03/15/DZ7k7E.jpg?resize=906,1024",
                 "align": "center",
                 "size": "xxl"
               }
@@ -523,11 +526,6 @@
                     swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ ไม่ได้ลงทะเบียนหรือเปล่านะ!", "error")
                 }
             },
-
-
-        );
-
-
         );
     }
     </script>
