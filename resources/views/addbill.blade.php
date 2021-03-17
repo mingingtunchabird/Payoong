@@ -325,11 +325,7 @@
         },
             function (data, textStatus, jqXHR) {
                 var qr = data
-                console.log(qr);
-            },
-        );
-
-        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
+                $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
             roomid: roomid,
             pumb_price: pumb_price,
             elec_price: elec_price,
@@ -527,6 +523,11 @@
                 }
             },
         );
+
+            },
+        );
+
+
     }
     </script>
 
