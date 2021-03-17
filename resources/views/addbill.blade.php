@@ -445,7 +445,6 @@
             "contents": [
               {
                 "type": "text",
-                "weight": "bold",
                 "text": total+" บาท",
                 "size": "xxl",
                 "color": "#1DB446",
@@ -506,6 +505,36 @@
                 "url": qr,
                 "align": "center",
                 "size": "xxl"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "xs",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "กรุณา Capture ภาพ QR Code",
+                "size": "sm",
+                "color": "#aaaaaa",
+                "align": "center"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "margin": "xs",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "เพื่อทำรายการผ่าน mobile banking",
+                "size": "sm",
+                "color": "#aaaaaa",
+                "align": "center"
               }
             ]
           }
