@@ -320,7 +320,13 @@
 
 
         function reply(roomid, pumb_price, elec_price, rent_price, total, flex){
-        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
+        $.post("https://www.busyaunties.lnw.mn/index.php/service/genQR", {
+            total: total
+        },
+            function (data, textStatus, jqXHR) {
+                var qr = data
+
+                $.post("https://www.busyaunties.lnw.mn/index.php/service/reply2", {
             roomid: roomid,
             pumb_price: pumb_price,
             elec_price: elec_price,
@@ -517,6 +523,11 @@
                     swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ ไม่ได้ลงทะเบียนหรือเปล่านะ!", "error")
                 }
             },
+
+            },
+        );
+
+
         );
     }
     </script>
