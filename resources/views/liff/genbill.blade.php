@@ -51,7 +51,12 @@
 
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
-    <input style="text-align: center;" type="file" name="img_src" class="from-control">
+    <p class="font-weight-bold">รูปภาพ <span class="text-red">*</span></p>
+    <div class="custom-file rounded-50">
+        <input type="file" class="custom-file-input" id="customFile" name="image">
+        <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
+        <img id="blah" src="#" alt="book image" class="preview-img mt-3 rounded-nm"/>
+    </div>
   </div>
 
   <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">

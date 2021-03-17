@@ -355,22 +355,32 @@ class RenterController extends Controller
         return redirect(Request::url());
     }
 
-    public function upload()
+    public function upload($request)
     {
 
-        return view('liff.genbill');
+        $this->validate($request,[
+            'isbn' => 'required',
+            'message' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
+        ]);
+
+        $filename = time().'.'.$request->image->extension();
+        $file = $request->file('image');
+        $file->move(public_path('Upload'),$filename);
+
+        // return view('liff.genbill');
         // $genbills = rent_bill::all();
         // return view('liff.genbill')->with('genbills',$genbills);
     }
 
 
-    public function save_image(Request $request){
-        if($request->hasFile('img_src')){
+    // public function save_image(Request $request){
+    //     if($request->hasFile('img_src')){
 
-        }else{
-            return redirect('liff.genbill')->with('msg', 'Please choose file.');
-        }
-    }
+    //     }else{
+    //         return redirect('liff.genbill')->with('msg', 'Please choose file.');
+    //     }
+    // }
 
     public function destroy($id){
 
@@ -380,6 +390,8 @@ class RenterController extends Controller
 
         return redirect('/package')->with('success', 'Delete Success!');
     }
+
+
 
 
 
