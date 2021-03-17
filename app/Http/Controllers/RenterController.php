@@ -362,7 +362,7 @@ class RenterController extends Controller
 
     public function storebill(Request $request)
     {
-        dd('store bill');
+        // dd('store bill');
         $this->validate($request,[
             'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
         ]);
