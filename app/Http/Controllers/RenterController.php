@@ -373,7 +373,9 @@ class RenterController extends Controller
 
         // $img = new ConfirmPayment();
         $img = "uploads/".$filename;
-        DB::insert('insert into confirm_payments (img) values (?)', [$img]);
+        DB::table('confirm_payments')->insert([
+            'img' => $img
+        ]);
 
 
         // return view('liff.genbill');
