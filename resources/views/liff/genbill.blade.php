@@ -47,7 +47,8 @@
   <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="42"></div>
   <div class="col-xs-6 col-md-4"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
 
-  <form action="{{ route('storebill') }}" method="post">
+  <form action="{{ route('storebill') }}" method="post" enctype="multipart/form-data">
+    @csrf
     <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
         <p class="font-weight-bold">รูปภาพ <span class="text-red">*</span></p>
         <div class="custom-file rounded-50">
