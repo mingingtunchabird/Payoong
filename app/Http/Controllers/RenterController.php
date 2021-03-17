@@ -357,7 +357,7 @@ class RenterController extends Controller
     }
 
     public function upbill(){
-        return view('genbill');
+        return view('liff.genbill');
     }
 
     public function storebill(Request $request)
