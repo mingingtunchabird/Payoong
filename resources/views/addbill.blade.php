@@ -175,7 +175,7 @@
                 <td style="text-align: center;">{{$todo->total}} บาท </td>
                 <td style="text-align: center;">{{$todo->status}}</td>
                 <td style="text-align: center;">
-                    <button id="myBtn2" class="btn btn-success" onclick="reply('{{$todo->roomid}}','{{$todo->pumb_price}}','{{$todo->elec_price}}','{{$todo->rent_price}}','{{$todo->total}}'))" type="submit">ส่งบิล</button>
+                    <button id="myBtn2" class="btn btn-success" onclick="reply('{{$todo->roomid}}','{{$todo->pumb_price}}','{{$todo->elec_price}}','{{$todo->rent_price}}','{{$todo->total}}')" type="submit">ส่งบิล</button>
                 </td>
             </tr>
             @endforeach
