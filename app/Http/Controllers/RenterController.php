@@ -355,7 +355,7 @@ class RenterController extends Controller
         return redirect(Request::url());
     }
 
-    public function upload($request)
+    public function upload(Request $request)
     {
 
         $this->validate($request,[
@@ -367,6 +367,8 @@ class RenterController extends Controller
         $filename = time().'.'.$request->image->extension();
         $file = $request->file('image');
         $file->move(public_path('Upload'),$filename);
+
+        $file->image = "uploads/".$filename;
 
         // return view('liff.genbill');
         // $genbills = rent_bill::all();
