@@ -365,6 +365,7 @@ class RenterController extends Controller
         // dd('store bill');
         $this->validate($request,[
             'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
+            'renterID' => 'required'
         ]);
 
         $filename = time().'.'.$request->image->extension();
