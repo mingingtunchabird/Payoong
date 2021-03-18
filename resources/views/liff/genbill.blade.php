@@ -48,7 +48,7 @@
   <p id="userId"></p>
   <p id="displayName"></p>
   <p id="statusMessage"></p>
-  <p id="getDecodedIDToken"></p>
+
 
 
 
@@ -94,7 +94,7 @@ function pop() {
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+
       }).catch(err => console.error(err));
     }
     liff.init({ liffId: "1655771343-VgwjeoZR" }, () => {
