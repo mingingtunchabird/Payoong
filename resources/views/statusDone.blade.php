@@ -122,7 +122,7 @@
 
     <div class="container box" >
 
-
+    {{-- <div class="container"> --}}
         <div class="d-flex">
             <div class="p-2"> <p style="font-size: 30px;"> รายการแจ้งซ่อม </p></div>
 
@@ -132,9 +132,15 @@
         </div>
 
 
-
+    {{-- </div> --}}
     <form action="/repair" method="GET">
-
+        {{-- <div class="container">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <a href="/repair" style="font-size: 20px;">รายการทั้งหมด |</a></span>
+                </div>
+            </div>
+        </div> --}}
         <div class="d-flex">
             <div class="p-2"> <p style="font-size: 18px; color:gray;"> เลือกรายการที่จะแสดง </p></div>
         </div>
@@ -148,9 +154,24 @@
                     <a href="{{route('processRepair')}}" style="font-size: 20px; padding-top:10px; color: grey;">กำลังดำเนินการ </a>|
                     <a href="{{route('doneRepair')}}" style="font-size: 20px; padding-top:10px; color: black;">ดำเนินการแล้ว </a> |
                 </span>
-            </div>
-        </div>
 
+            </div>
+
+    {{-- <div class="p-2">
+            <select class="form-control selectpicker" name="type_repair">
+                <option value="" disabled selected>เลือกรายการ</option>
+                <option>ซ่อมไฟฟ้า</option>
+                <option>ซ่อมน้ำประปา</option>
+                <option>ซ่อมแอร์</option>
+                <option>ซ่อมประตู</option>
+                <option>ซ่อมทีวี</option>
+            </select>
+    </div>
+        <div class="p-2">
+            <button type="submit" class="btn btn-outline-secondary p-2" style="border-radius: 50%;">
+                <i class="fas fa-search"></i>
+            </button>
+        </div> --}}
     </form>
     </div>
 
