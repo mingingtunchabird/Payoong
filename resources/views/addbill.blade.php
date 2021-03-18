@@ -263,13 +263,6 @@
                             </select>
                         </div>
 
-{{--                        <div class="form-group col-12/">--}}
-{{--                            <label for="exampleFormControlInput1">ค่าบำรุงหอพัก</label>--}}
-{{--                            <select class="form-control" name="rent_price">--}}
-{{--                                <option>5000</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-
                         <div class="form-group col-12 text-center mt-4">
                             <button type="submit" class="btn col-6" style="background: #2B4161; color: #f7f7f7;">สร้างบิล</button>
                         </div>

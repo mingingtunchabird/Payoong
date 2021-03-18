@@ -148,6 +148,8 @@
                     <a href="{{route('processRepair')}}" style="font-size: 20px; padding-top:10px; color: grey;">กำลังดำเนินการ </a>|
                     <a href="{{route('doneRepair')}}" style="font-size: 20px; padding-top:10px; color: black;">ดำเนินการแล้ว </a> |
                 </span>
+            </div>
+        </div>
 
     </form>
     </div>
