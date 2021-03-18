@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;400&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPLOAD RECIEPT</title>
+    <title>UPLOAD RECEIPT</title>
 </head>
 <body>
 
@@ -58,7 +58,7 @@
       </div>
 
       <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
-                <button style="width:100%; height:50px; border-radius:70px;" onclick="swal()" class="btn btn-primary" type="submit" > <p style="font-size:1.2rem; margin-top:3px;">UPLOAD</p></button>
+                <button style="width:100%; height:50px; border-radius:70px;" onclick="pop()" class="btn btn-primary" type="submit" > <p style="font-size:1.2rem; margin-top:3px;">UPLOAD</p></button>
         </div>
 
 
@@ -71,13 +71,10 @@
 
 <script>
 
-function swal() {
+function pop() {
                 // console.log(data)
-                if(data == '1'){
-                    swal("แจ้งเตือนเรียบร้อย", "ส่งแจ้งเตือนให้ลูกบ้านเรียบร้อยแล้ว", "success")
-                }else{
-                    swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ ไม่ได้ลงทะเบียนหรือเปล่านะ!", "error")
-                }
+        swal("แจ้งเตือนเรียบร้อย", "ส่งแจ้งเตือนให้ลูกบ้านเรียบร้อยแล้ว", "success")
+
             }
 </script>
 
