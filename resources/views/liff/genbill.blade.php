@@ -55,7 +55,7 @@
         <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1">
         <div class="custom-file rounded-50">
             <input type="file" class="custom-file-input" id="customFile" name="image">
-            <label class="custom-file-label rounded-50" for="customFile" style="text-align: center;">Choose image</label>
+            <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
         </div>
       </div>
 
