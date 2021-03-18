@@ -357,7 +357,7 @@ class RenterController extends Controller
     }
 
     public function upbill(){
-        // return view('liff.genbill');
+        return view('liff.genbill');
     }
 
     public function storebill(Request $request)
@@ -380,7 +380,7 @@ class RenterController extends Controller
 
         // return view('liff.genbill');
         // $genbills = rent_bill::all();
-        return redirect()->route('genbill');
+        //return redirect()->route('genbill');
     }
 
 
