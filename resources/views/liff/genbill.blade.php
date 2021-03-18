@@ -73,7 +73,7 @@
 
 function pop() {
                 // console.log(data)
-        swal("แจ้งเตือนเรียบร้อย", "ส่งแจ้งเตือนให้ลูกบ้านเรียบร้อยแล้ว", "success")
+                swal("Upload success!");
 
             }
 </script>
