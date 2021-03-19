@@ -45,9 +45,9 @@
 </style>
 
 <img id="pictureUrl" width="25%">
-  <p id="userId"></p>
+  {{-- <p id="userId"></p> --}}
   <p id="displayName"></p>
-  <p id="statusMessage"></p>
+  {{-- <p id="statusMessage"></p> --}}
 
 
 
@@ -93,7 +93,7 @@ function pop() {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
-        document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
+        //document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
 
       }).catch(err => console.error(err));
     }
