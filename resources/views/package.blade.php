@@ -21,7 +21,7 @@
 
         .box{
             /* position: fixed; */
-            height: 100%;
+            height: fit-content;
             width: 100%;
             /* margin-left: 10vw; */
             background-color: white;
