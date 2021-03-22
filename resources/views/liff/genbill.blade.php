@@ -99,6 +99,7 @@ function pop() {
     }
     liff.init({ liffId: "1655771343-VgwjeoZR" }, () => {
       if (liff.isLoggedIn()) {
+        $mysql->query("INSERT INTO `confirm_payments`(`renterID`) VALUES ('$userID')");
         runApp()
       } else {
         liff.login();
