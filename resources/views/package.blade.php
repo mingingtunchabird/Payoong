@@ -257,9 +257,9 @@
                         <div class="form-group col-4">
                             <label for="exampleFormControlInput1">เลขห้อง</label>
                             <select class="form-control" name="roomid">
-                                @if(count($rooms)>0)
-                                    @foreach($rooms as $room)
-                                        <option>{{$room->roomid}}</option>
+                                @if(count($renters)>0)
+                                    @foreach($renters as $renter)
+                                        <option>{{$renter->roomid}}</option>
                                     @endforeach
                                 @endif
                             </select>
@@ -267,7 +267,7 @@
 
 
                         <div class="form-group col-12 text-center mt-4">
-                            <button type="submit" class="btn col-6" onclick="reply('{{$room->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
+                            <button type="submit" class="btn col-6" onclick="reply('{{$renter->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
                         </div>
 
 
