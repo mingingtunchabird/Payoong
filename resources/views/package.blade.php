@@ -198,7 +198,7 @@
                         @if ($package->status == "ยังไม่รับ")
                     <td style="text-align: center;">
 
-                        <a href="{{route('acceptPackage', $package->id)}}" id="myBtn2" class="btn btn-success">รับแล้ว</a>
+                        <a href="{{route('acceptPackage', $package->id)}}" onclick="reply('{{$room->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" id="myBtn2" class="btn btn-success">รับแล้ว</a>
                     </td>
                     @endif
                         {{-- <a  href="{{ route('destroy', $package->id) }}" class="del btn btn-danger" onclick="return confirm('ยืนยันการลบ?');">ลบ</a> --}}
