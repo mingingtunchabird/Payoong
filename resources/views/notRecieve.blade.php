@@ -182,7 +182,7 @@
                 <th scope="col" style="font-weight: lighter; text-align: center;">สถานะ</th>
                 <th scope="col" style="font-weight: lighter; text-align: center;">action</th>
                 {{-- <th scope="col" style="font-weight: lighter">ภาพประกอบ</th> --}}
-                <th scope="col" style="font-weight: lighter; text-align: center;">ข้อความ</th>
+
             </tr>
             </thead>
             <tbody>
