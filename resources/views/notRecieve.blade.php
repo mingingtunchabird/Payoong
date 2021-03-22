@@ -211,7 +211,7 @@
                             <a href="{{route('acceptPackage', $package->id)}}" id="myBtn2" class="btn btn-outline-success">รับแล้ว</a>
                         </td>
 
-                        <td style="text-align: center;">
+                        {{-- <td style="text-align: center;">
                             <div class="d-flex">
                                 <div class="p-2">
                                     <input type="text" class="form-control bg-white" id="textcopy{{$package->id}}" value="พัสดุของคุณ {{$package->pac_name.'ห้อง' . $package->roomid}}มาแล้วจ้า" readonly>
@@ -229,7 +229,7 @@
 
                             </div>
 
-                        </td>
+                        </td> --}}
 
 
                     @endif
