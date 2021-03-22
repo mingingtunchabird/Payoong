@@ -36,6 +36,6 @@ class PackageController extends Controller
 
         $packages = package::where('status','ยังไม่รับ')->get();
 
-        return view('/notrecieve')->with('packages', $packages);
+        return view('notRecieve')->with('packages', $packages);
     }
 }
