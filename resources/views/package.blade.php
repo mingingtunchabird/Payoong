@@ -314,7 +314,7 @@
 
         function reply(roomid, msg){
         $.post("https://www.busyaunties.lnw.mn/index.php/service/reply3", {
-            roomid: roomid
+            roomid: roomid,
             msg: msg
         },
             function (data, textStatus, jqXHR) {
@@ -322,7 +322,7 @@
                 if(data == '1'){
                     swal("แจ้งเตือนเรียบร้อย", "ส่งแจ้งเตือนให้ลูกบ้านเรียบร้อยแล้ว", "success")
                 }else{
-                    swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ ไม่ได้ลงทะเบียนหรือเปล่านะ!", "error")
+                    swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ", "error")
                 }
             },
         );
