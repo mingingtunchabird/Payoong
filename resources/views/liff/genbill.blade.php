@@ -96,7 +96,7 @@ function pop() {
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        IDuser = profile.userId;
+        this.IDuser = profile.userId;
 
       }).catch(err => console.error(err));
     }
