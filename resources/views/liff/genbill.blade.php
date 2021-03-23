@@ -63,7 +63,7 @@
         <div class="custom-file rounded-50">
             <input type="file" class="custom-file-input" id="customFile" name="image">
             <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
-            <input type="text" id="userId" value="" name="userID" hidden>
+            <input type="text" id="userId" value="" name="userID">
         </div>
       </div>
 
