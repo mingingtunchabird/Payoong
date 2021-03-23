@@ -91,7 +91,7 @@
 
 function pop() {
     liff.getProfile().then(profile => {
-        $("input[name='userid']").val(profile.userID);
+        document.getElementById('testInput').value = profile.userId;
 
       }).catch(err => console.error(err));
                 // console.log(data)
@@ -109,7 +109,7 @@ function pop() {
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // this.IDuser = profile.userId;
-        document.getElementById('testInput').value = "พาริส";
+
         document.getElementById("input_uid").innerHTML = '<input type="text" value="' + profile.userId + '" name="userid">';
         $("input[name='userid']").val(profile.userID);
 
