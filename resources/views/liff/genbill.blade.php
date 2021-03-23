@@ -63,6 +63,7 @@
         <div class="custom-file rounded-50">
             <input type="file" class="custom-file-input" id="customFile" name="image">
             <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
+            <input type="text" id="userId" value="" name="userID" hidden>
         </div>
       </div>
 
@@ -94,6 +95,7 @@ function pop() {
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
+        document.getElementById('userId').value = profile.userId;
 
       }).catch(err => console.error(err));
     }
