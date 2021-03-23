@@ -205,7 +205,7 @@
 </div>
         @include('sweetalert::alert')
 
-<script>
+{{-- <script>
     window.onscroll = function() {myFunction()};
 
     var navbar = document.getElementById("navbar");
@@ -215,10 +215,10 @@
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky")
         } else {
-            //navbar.classList.remove("sticky");
+            navbar.classList.remove("sticky");
         }
     }
-</script>
+</script> --}}
 
 <script
     src="https://code.jquery.com/jquery-3.5.1.js"></script>
