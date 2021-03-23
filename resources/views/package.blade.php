@@ -200,7 +200,7 @@ crossorigin="anonymous">
                         @if ($package->status == "ยังไม่รับ")
                     <td style="text-align: center;">
 
-                        <a href="{{route('acceptPackage', $package->id)}}"  id="myBtn2" class="btn btn-success">รับแล้ว</a>
+                        {{-- <a href="{{route('acceptPackage', $package->id)}}"  id="myBtn2" class="btn btn-success">รับแล้ว</a> --}}
                         <button id="myBtn2" class="btn btn-success" onclick="reply('{{$package->roomid}}' ,'มารับพัสดุด้วยจ้า')"  type="submit">แจ้งเตือน</button>
                     </td>
                     @endif
