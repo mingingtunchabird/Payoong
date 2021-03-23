@@ -267,7 +267,7 @@
 
 
                         <div class="form-group col-12 text-center mt-4">
-                            <button type="submit" class="btn col-6" onclick="reply('{{$room->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
+                            <button type="submit" class="btn col-6" onclick="reply('{{$package->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
                         </div>
 
 
