@@ -375,7 +375,8 @@ class RenterController extends Controller
         // $img = new ConfirmPayment();
         $img = "uploads/".$filename;
         $response = DB::table('confirm_payments')->insert([
-            'img' => $img
+            'img' => $img,
+            'renterID' => $request->input('userID')
         ]);
 
 
