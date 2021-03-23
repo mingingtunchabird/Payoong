@@ -89,14 +89,15 @@ function pop() {
 </script>
 
 <script>
-    var IDuser;
+    // var IDuser;
     function runApp() {
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        this.IDuser = profile.userId;
+        // this.IDuser = profile.userId;
+        document.getElementById('user_Id').value = "พาริส";
 
       }).catch(err => console.error(err));
     }
@@ -107,8 +108,8 @@ function pop() {
         liff.login();
       }
     }, err => console.error(err.code, error.message));
-    document.getElementById('user_Id').value = IDuser;
-  </script>
+    // document.getElementById('user_Id').value = IDuser;
+</script>
 
 
 
