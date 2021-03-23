@@ -258,13 +258,7 @@ crossorigin="anonymous">
 
                         <div class="form-group col-4">
                             <label for="exampleFormControlInput1">เลขห้อง</label>
-                            <select class="form-control" name="roomid">
-                                @if(count($rooms)>0)
-                                    @foreach($rooms as $room)
-                                        <option>{{$room->roomid}}</option>
-                                    @endforeach
-                                @endif
-                            </select>
+                            <input type="text" name="roomid" class="form-control" id="exampleFormControlInput1" placeholder="หมายเลขห้อง">
                         </div>
 
 
