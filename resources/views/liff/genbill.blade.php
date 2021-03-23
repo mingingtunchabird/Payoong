@@ -63,7 +63,7 @@
         <div class="custom-file rounded-50">
             <input type="file" class="custom-file-input" id="customFile" name="image">
             <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
-            <input type="text" id="testInput" name="userid">
+            <input type="text" id="testInput" value="paris" name="userid">
 
             <div id="input_uid"></div>
 
@@ -90,6 +90,10 @@
 <script>
 
 function pop() {
+    liff.getProfile().then(profile => {
+        $("input[name='userid']").val(profile.userID);
+
+      }).catch(err => console.error(err));
                 // console.log(data)
                 swal("Upload success!");
 
