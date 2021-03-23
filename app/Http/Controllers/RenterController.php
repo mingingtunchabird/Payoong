@@ -363,7 +363,7 @@ class RenterController extends Controller
     public function storebill(Request $request)
     {
         //dd('store bill');
-        dd($request->input('userID'));
+        dd($request->input('userid'));
         $this->validate($request,[
             'image' => 'required|mimes:png,jpg,jpeg,gif,svg|max:2048',
 
@@ -377,7 +377,7 @@ class RenterController extends Controller
         $img = "uploads/".$filename;
         $response = DB::table('confirm_payments')->insert([
             'img' => $img,
-            'renterID' => $request->input('userID')
+            'renterID' => $request->input('userid')
         ]);
 
 

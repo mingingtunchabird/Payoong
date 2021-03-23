@@ -65,6 +65,8 @@
             <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
             <input type="text" id="testInput" value="paris" name="userid">
 
+            <input type="text">
+
             <div id="input_uid"></div>
 
         </div>
