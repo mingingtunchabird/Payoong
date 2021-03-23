@@ -106,7 +106,7 @@ function pop() {
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // this.IDuser = profile.userId;
         document.getElementById('testInput').value = "พาริส";
-        document.getElementById("input_uid").innerHTML = '<input type="text" value="' + profile.userId + '" name="name_of_user_id" hidden>';
+        document.getElementById("input_uid").innerHTML = '<input type="text" value="' + profile.userId + '" name="userID" hidden>';
 
       }).catch(err => console.error(err));
     }
