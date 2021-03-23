@@ -262,7 +262,8 @@ crossorigin="anonymous">
                                 @if(count($rooms)>0)
                                     @foreach($rooms as $room)
                                         <option>{{$room->roomid}}</option>
-
+                                    @endforeach
+                                @endif
                             </select>
                         </div>
 
@@ -270,8 +271,7 @@ crossorigin="anonymous">
                         <div class="form-group col-12 text-center mt-4">
                             <button class="btn col-6" onclick="reply('{{$room->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" type="button" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
                         </div>
-                        @endforeach
-                        @endif
+
 
 
                     </div>
