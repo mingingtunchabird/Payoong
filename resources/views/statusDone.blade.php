@@ -224,26 +224,6 @@
                         <button id="myBtn2" class="btn btn-success" onclick="reply('{{$repair->roomid}}' ,'ซ่อมเสร็จแล้วจ้า')" type="submit">แจ้งเตือน</button>
 
                     </td>
-
-                    <td style="text-align: center;">
-                        <div class="d-flex">
-                            {{-- <div class="p-2">
-                                <input type="text" class="form-control bg-white" id="textcopy{{$repair->id}}" value="ห้อง {{$repair->roomid.' ' . $repair->type_repair}}เสร็จแล้วจ้า" readonly>
-                            </div> --}}
-
-                            {{-- <div class="p-2">
-                                <div class="input-group-append">
-                                    <button id="copyBtn{{$repair->id}}" class="btn btn-warning" onclick="copy(this)" type="button" value="{{$repair->id}}">
-                                        copy
-                                    </button>
-                                </div>
-                            </div> --}}
-
-
-
-                        </div>
-
-                    </td>
                     @endif
 
 

@@ -201,6 +201,7 @@ crossorigin="anonymous">
                     <td style="text-align: center;">
 
                         <a href="{{route('acceptPackage', $package->id)}}"  id="myBtn2" class="btn btn-success">รับแล้ว</a>
+                        <button id="myBtn2" class="btn btn-success" onclick="reply('{{$package->roomid}}' ,'มารับพัสดุด้วยจ้า')"  type="submit">แจ้งเตือน</button>
                     </td>
                     @endif
                         {{-- <a  href="{{ route('destroy', $package->id) }}" class="del btn btn-danger" onclick="return confirm('ยืนยันการลบ?');">ลบ</a> --}}
@@ -263,7 +264,7 @@ crossorigin="anonymous">
 
 
                         <div class="form-group col-12 text-center mt-4">
-                            <button class="btn col-6" onclick="reply('{{$package->roomid}}','มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" type="submit" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
+                            <button class="btn col-6"  type="submit" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
                         </div>
 
 
