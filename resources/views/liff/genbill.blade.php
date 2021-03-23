@@ -63,7 +63,7 @@
         <div class="custom-file rounded-50">
             <input type="file" class="custom-file-input" id="customFile" name="image">
             <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
-            <input type="text" id="userId" value="" name="userID">
+            <input type="text" id="user_Id" value="" name="userID">
         </div>
       </div>
 
@@ -89,14 +89,13 @@ function pop() {
 </script>
 
 <script>
-    var IDuser;
     function runApp() {
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-        IDuser = profile.userId;
+        document.getElementById('user_Id').value = profile.userId;
 
       }).catch(err => console.error(err));
     }
@@ -107,7 +106,7 @@ function pop() {
         liff.login();
       }
     }, err => console.error(err.code, error.message));
-    document.getElementById('userId').value = IDuser;
+
   </script>
 
 
