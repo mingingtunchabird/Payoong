@@ -45,7 +45,7 @@
 </style>
 
 <img id="pictureUrl" width="25%">
-  <p id="userId"></p>
+  {{-- <p id="userId"></p> --}}
   <p id="displayName"></p>
   {{-- <p id="statusMessage"></p> --}}
 
@@ -63,9 +63,9 @@
         <div class="custom-file rounded-50">
             <input type="file" class="custom-file-input" id="customFile" name="image">
             <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
-            <input type="text" id="testInput" value="paris" name="userid">
+            <input type="text" id="userId" value="paris" name="userid">
 
-            <input type="text">
+
 
             <div id="input_uid"></div>
 
@@ -112,8 +112,8 @@ function pop() {
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // this.IDuser = profile.userId;
 
-        document.getElementById("input_uid").innerHTML = '<input type="text" value="' + profile.userId + '" name="userid">';
-        $("input[name='userid']").val(profile.userID);
+        // document.getElementById("input_uid").innerHTML = '<input type="text" value="' + profile.userId + '" name="userid">';
+        // $("input[name='userid']").val(profile.userID);
 
       }).catch(err => console.error(err));
     }
