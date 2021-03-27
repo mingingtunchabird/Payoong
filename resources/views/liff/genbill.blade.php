@@ -44,9 +44,9 @@
 
 </style>
 
-<img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;">
+<img id="pictureUrl" width="10%" style="border-radius: 50%; float: left; padding-left: 10%;">
   {{-- <p id="userId"></p> --}}
-  <p id="displayName" style="padding-left: 10%; "></p>
+  <p id="displayName" ></p>
   {{-- <p id="statusMessage"></p> --}}
 
 
