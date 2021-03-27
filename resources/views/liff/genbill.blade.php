@@ -44,7 +44,7 @@
 
 </style>
 
-<img id="pictureUrl" width="25%">
+<img id="pictureUrl" width="25%" style="border-radius: 50%;">
   {{-- <p id="userId"></p> --}}
   <p id="displayName"></p>
   {{-- <p id="statusMessage"></p> --}}
