@@ -44,7 +44,7 @@
 
 </style>
 
-
+<input type="text" id="userId" value=" " name="userid">
 
 {{-- <img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;"> --}}
   {{-- <p id="userId"></p> --}}
@@ -79,7 +79,7 @@
             {{-- <div id="input_uid"></div> --}}
 
         </div>
-        <input type="text" id="useID" value=" " name="userid">
+        {{-- <input type="text" id="useID" value=" " name="userid"> --}}
       </div>
 
       <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
