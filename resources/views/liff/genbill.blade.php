@@ -104,8 +104,9 @@
 <script>
 
 function pop() {
-    var userid = document.getElementById('userId').value;
-    document.getElementById('userID').value = userid;
+    var userid = document.getElementById("userId").value;
+    $("#userID").val(userid);
+    //document.getElementById("userID").value = userid;
     //$("#id_form").submit();
 
     // liff.getProfile().then(profile => {
