@@ -56,13 +56,14 @@
 
 <div class="container-fluid">
   <div class="row">
-  {{-- <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="42"></div> --}}
-  <div class="col align-self-end"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
-  <div class="col-xs-6 col-md-4">
+    <div class="col align-self-end">
         <img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;">
         {{-- <p id="userId"></p> --}}
         <p id="displayName" ></p>
     </div>
+  {{-- <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="42"></div> --}}
+  <div class="col align-self-end"><h1 class="mt-5 title" style="margin-top:80px; text-align: center;">อัปโหลดภาพสลิปโอนเงิน</h1></div>
+
 
   <form action="{{ route('storebill') }}" method="post" enctype="multipart/form-data">
     @csrf
