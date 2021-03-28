@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="jquery-3.5.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;400&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
