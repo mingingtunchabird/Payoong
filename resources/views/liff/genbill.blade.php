@@ -56,7 +56,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col align-self-end">
+    <div class="col-xs-6 col-md-4">
         <img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;">
         {{-- <p id="userId"></p> --}}
         <p id="displayName" ></p>
