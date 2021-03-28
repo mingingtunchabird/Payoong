@@ -216,68 +216,65 @@ crossorigin="anonymous">
 
 
                 </tr>
-            </tbody>
-        </table>
-
-                <div id="myModal" class="modal">
-
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <form method="post" action="{{route('addpackage')}}">
-                            @csrf
-                            <div class="container">
-                                <div class="row">
-
-                                    <div class="col-12"><p style="font-size: 18px;">เพิ่มรายการพัสดุ</p></div>
-
-                                    <div class="form-group col-6">
-
-                                        <label for="exampleFormControlInput1">ชื่อผู้รับ (หน้าซอง)</label>
-                                        <input type="text" name="pac_name" class="form-control" id="exampleFormControlInput1" placeholder="กรอกชื่อผู้รับ">
-                                    </div>
-
-
-
-                                    <div class="form-group col-6">
-
-                                        <label for="exampleFormControlInput1">ชื่อเจ้าหน้าที่ผู้รับแทน</label>
-                                        <input type="text" name="emp_name" class="form-control" id="exampleFormControlInput1" placeholder="กรอกชื่อเจ้าหน้าที่">
-                                    </div>
-
-
-                                    <div class="form-group col-6">
-                                        <label for="exampleFormControlInput1">หมายเลขติดตาม</label>
-                                        <input type="text" name="trackid" class="form-control" id="exampleFormControlInput1" placeholder="กรอกหมายเลขติดตาม">
-                                    </div>
-
-
-                                    <div class="form-group col-4">
-                                        <label for="exampleFormControlInput1">เลขห้อง</label>
-                                        <input type="text" name="roomid" class="form-control" id="exampleFormControlInput1" placeholder="หมายเลขห้อง">
-                                    </div>
-
-
-                                    <div class="form-group col-12 text-center mt-4">
-                                        <button class="btn col-6"  type="submit" onclick="reply('{{$package->roomid}}' ,'มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
             @endforeach
             @endif
 
-
+            </tbody>
+        </table>
 
     </div>
 
+    <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form method="post" action="{{route('addpackage')}}">
+                @csrf
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12"><p style="font-size: 18px;">เพิ่มรายการพัสดุ</p></div>
+
+                        <div class="form-group col-6">
+
+                            <label for="exampleFormControlInput1">ชื่อผู้รับ (หน้าซอง)</label>
+                            <input type="text" name="pac_name" class="form-control" id="exampleFormControlInput1" placeholder="กรอกชื่อผู้รับ">
+                        </div>
+
+
+
+                        <div class="form-group col-6">
+
+                            <label for="exampleFormControlInput1">ชื่อเจ้าหน้าที่ผู้รับแทน</label>
+                            <input type="text" name="emp_name" class="form-control" id="exampleFormControlInput1" placeholder="กรอกชื่อเจ้าหน้าที่">
+                        </div>
+
+
+                        <div class="form-group col-6">
+                            <label for="exampleFormControlInput1">หมายเลขติดตาม</label>
+                            <input type="text" name="trackid" class="form-control" id="exampleFormControlInput1" placeholder="กรอกหมายเลขติดตาม">
+                        </div>
+
+
+                        <div class="form-group col-4">
+                            <label for="exampleFormControlInput1">เลขห้อง</label>
+                            <input type="text" name="roomid" class="form-control" id="exampleFormControlInput1" placeholder="หมายเลขห้อง">
+                        </div>
+
+
+                        <div class="form-group col-12 text-center mt-4">
+                            <button class="btn col-6"  type="submit" onclick="reply('{{$package->roomid}}' ,'มารับพัสดุด้วยจ้า ภายใน 4 โมงเย็นนะ!')" style="background: #2B4161; color: #f7f7f7;">เพิ่มพัสดุ</button>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
 
 
 
