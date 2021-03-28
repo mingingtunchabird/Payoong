@@ -46,9 +46,9 @@
 
 
 
-<img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;">
+{{-- <img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;"> --}}
   {{-- <p id="userId"></p> --}}
-  <p id="displayName" ></p>
+  {{-- <p id="displayName" ></p> --}}
   {{-- <p id="statusMessage"></p> --}}
 
 
