@@ -230,6 +230,8 @@
     })
 </script>
 
+@yield('footer-js')
+
 </body>
 </html>
 

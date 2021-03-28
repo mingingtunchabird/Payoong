@@ -80,7 +80,7 @@
             {{-- <div id="input_uid"></div> --}}
 
         </div>
-        <input type="text" id="useID" value=" " name="userid">
+        <input type="text" id="useID" name="userid">
       </div>
 
       <div class="col-xs-6 col-md-4 mt-5 text-center d-inline-flex ml-1 p-1" style="margin-top:200px;">
@@ -103,14 +103,18 @@
 <script>
 
 function pop() {
-    liff.getProfile().then(profile => {
-        document.getElementById('testInput').value = profile.userId;
+    var userid = $("#userId").val();
+    $("#useID").val(userId);
+    $("#id_form").submit();
 
-      }).catch(err => console.error(err));
-                // console.log(data)
-                swal("Upload success!");
+    // liff.getProfile().then(profile => {
+    //     document.getElementById('testInput').value = profile.userId;
 
-            }
+    //   }).catch(err => console.error(err));
+    //             // console.log(data)
+    //             swal("Upload success!");
+
+    //         }
 </script>
 
 <script>
@@ -140,9 +144,9 @@ function pop() {
 
 
     $("#btnSm").click(function(){
-    var userid = $("#userId").val();
-    $("#useID").val(userId);
-    $("#id_form").submit();
+        var userid = $("#userId").val();
+        $("#useID").val(userId);
+        $("#id_form").submit();
     });
 </script>
 
