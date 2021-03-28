@@ -106,7 +106,7 @@
 function pop() {
     var userid = $("#userId").val();
     $("#useID").val(userId);
-    $("#id_form").submit();
+    //$("#id_form").submit();
 
     // liff.getProfile().then(profile => {
     //     document.getElementById('testInput').value = profile.userId;
