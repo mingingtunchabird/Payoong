@@ -216,7 +216,8 @@ crossorigin="anonymous">
 
 
                 </tr>
-
+            @endforeach
+            @endif
 
             </tbody>
         </table>
@@ -274,8 +275,6 @@ crossorigin="anonymous">
         </div>
 
     </div>
-    @endforeach
-            @endif
 
 
 
