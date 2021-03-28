@@ -116,6 +116,7 @@ function pop() {
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         // document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+        document.getElementById("userId").value = profile.userId;
         document.getElementById("displayName").innerHTML = profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         // this.IDuser = profile.userId;
