@@ -114,7 +114,7 @@ function pop() {
     //             // console.log(data)
     //             swal("Upload success!");
 
-    //         }
+}
 </script>
 
 <script>
