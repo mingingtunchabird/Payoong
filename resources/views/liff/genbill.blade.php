@@ -47,7 +47,7 @@
 
 
 {{-- <img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;"> --}}
-  {{-- <p id="userId"></p> --}}
+  <p id="userId"></p>
   {{-- <p id="displayName" ></p> --}}
   {{-- <p id="statusMessage"></p> --}}
 
@@ -71,7 +71,7 @@
         <div class="custom-file rounded-50">
             <input type="file" class="custom-file-input" id="customFile" name="image">
             <label class="custom-file-label rounded-50" for="customFile">Choose image</label>
-            <p id="userId"></p>
+
 
 
 
