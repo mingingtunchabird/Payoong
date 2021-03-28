@@ -105,6 +105,7 @@
 
 function pop() {
     var userid = document.getElementById("userId").value;
+    alert($("#userId").val().toString());
     $("#userID").val(userid);
     //document.getElementById("userID").value = userid;
     //$("#id_form").submit();
