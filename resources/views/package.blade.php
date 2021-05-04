@@ -31,7 +31,7 @@ crossorigin="anonymous">
             /* margin-top: 20vh; */
             border-radius: 10px;
             /* display: flex; */
-            transform: translate( 0%, 0%);
+            transform: translate( 0%, 5%);
         }
 
         .btnSearch{
