@@ -28,7 +28,7 @@ crossorigin="anonymous">
             width: 100%;
             /* margin-left: 10vw; */
             background-color: white;
-            /* margin-top: 20vh; */
+            margin-top: 20vh;
             border-radius: 10px;
             /* display: flex; */
             transform: translate( 0%, 10%);
