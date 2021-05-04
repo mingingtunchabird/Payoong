@@ -108,7 +108,7 @@
             background-color: white;
             /* margin-top: 20vh; */
             border-radius: 10px;
-            transform: translate( 0%, 10%);
+            transform: translate( 0%, 5%);
         }
 
 
