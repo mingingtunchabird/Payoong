@@ -358,7 +358,7 @@ class RenterController extends Controller
     }
     public function check1()
     {
-        $confirm = ConfirmPayment::OrderBy('created_at','desc')->get();
+        $confirm = ConfirmPayment::select('img')->get();
         return view('checkBill')->with('confirm', $confirm);
     }
 
