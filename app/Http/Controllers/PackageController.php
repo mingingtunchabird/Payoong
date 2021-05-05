@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\package;
+use App\ConfirmPayment;
 
 class PackageController extends Controller
 {
@@ -37,5 +38,11 @@ class PackageController extends Controller
         $packages = package::where('status','ยังไม่รับ')->get();
 
         return view('notRecieve')->with('packages', $packages);
+    }
+
+    public function check1()
+    {
+        $confirm = ConfirmPayment::select('img')->get();
+        return view('checkBill')->with('confirm', $confirm);
     }
 }

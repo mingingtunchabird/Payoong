@@ -11,7 +11,7 @@ use App\setting;
 use App\package;
 use App\repair;
 use App\complain;
-use App\ConfirmPayment;
+
 // use App\ConfirmPayment;
 use Illuminate\Support\Facades\DB;
 // use App\filters;
@@ -356,11 +356,7 @@ class RenterController extends Controller
 
         return redirect(Request::url());
     }
-    public function check1()
-    {
-        $confirm = ConfirmPayment::select('img')->get();
-        return view('checkBill')->with('confirm', $confirm);
-    }
+
 
     public function upbill(){
         return view('liff.genbill');
