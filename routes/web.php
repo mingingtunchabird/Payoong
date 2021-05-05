@@ -219,7 +219,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/recieved','PackageController@index')->name('packageRecieved');
     Route::get('/notrecieve','PackageController@index2')->name('notRecieved');
-    Route::get('/checkBill','RenterController@checkBill')->name('checkBill');
+    Route::get('/checkBill','RenterController@check1')->name('checkBill');
 
     Route::get('/repair','RenterController@showrepair');
     Route::post('/addRepair','RenterController@addRepair')->name('addRepair');

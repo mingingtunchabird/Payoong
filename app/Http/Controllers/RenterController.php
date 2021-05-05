@@ -356,7 +356,7 @@ class RenterController extends Controller
 
         return redirect(Request::url());
     }
-    public function checkBill()
+    public function check1()
     {
         $confirm = ConfirmPayment::OrderBy('created_at','desc')->get();
         return view('checkBill')->with('confirm', $confirm);
