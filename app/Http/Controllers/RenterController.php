@@ -11,6 +11,7 @@ use App\setting;
 use App\package;
 use App\repair;
 use App\complain;
+use App\ConfirmPayment;
 // use App\ConfirmPayment;
 use Illuminate\Support\Facades\DB;
 // use App\filters;
@@ -354,6 +355,11 @@ class RenterController extends Controller
         $accept->save();
 
         return redirect(Request::url());
+    }
+    public function checkBill()
+    {
+        $confirm = ConfirmPayment::OrderBy('created_at','desc')->get();
+        return view('checkBill')->with('confirm', $confirm);
     }
 
     public function upbill(){
