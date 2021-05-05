@@ -132,7 +132,7 @@
         <div class="p-2">
             <span>
                 <a class="active-menu" href="/repair" style="font-size: 20px; padding-top:10px; color: black;">รายการทั้งหมด </a>|
-                <a href="{{route('checkBill')}}" style="font-size: 20px; padding-top:10px; color: grey;">รายการค้างจ่าย </a>|
+                <a href="#" style="font-size: 20px; padding-top:10px; color: grey;">รายการค้างจ่าย </a>|
                 <a href="#" style="font-size: 20px; padding-top:10px; color: grey;">รายการจ่ายแล้ว </a> |
             </span>
 
