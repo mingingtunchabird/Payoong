@@ -121,6 +121,23 @@
         </div>
     </div>
 
+    <div class="d-flex">
+        <div class="p-2"> <p style="font-size: 18px; color:gray;"> เลือกรายการที่จะแสดง </p></div>
+    </div>
+
+    <div class="d-flex">
+
+
+        <div class="p-2">
+            <span>
+                <a class="active-menu" href="/repair" style="font-size: 20px; padding-top:10px; color: black;">รายการทั้งหมด </a>|
+                <a href="#" style="font-size: 20px; padding-top:10px; color: grey;">รายการค้างจ่าย </a>|
+                <a href="#" style="font-size: 20px; padding-top:10px; color: grey;">รายการจ่ายแล้ว </a> |
+            </span>
+
+        </div>
+    </div>
+
 
     <br>
 

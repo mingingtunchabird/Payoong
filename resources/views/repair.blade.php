@@ -159,6 +159,7 @@
                 </span>
 
             </div>
+        </div>
 
     <div class="p-2">
             <select class="form-control selectpicker" name="type_repair">
