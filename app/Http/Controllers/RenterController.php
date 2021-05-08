@@ -358,8 +358,8 @@ class RenterController extends Controller
     }
     public function check1()
     {
-        // $confirm = ConfirmPayment::select('img')->get();
-        // return view('checkBill')->with('confirm', $confirm);
+        $confirm = ConfirmPayment::select('img')->get();
+        return view('checkBill')->with('confirm', $confirm);
     }
 
     public function upbill(){
