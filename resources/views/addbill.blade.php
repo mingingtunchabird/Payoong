@@ -130,7 +130,7 @@
             <div class="p-2">
                 <span>
                     <a class="active-menu" href="/addbill" style="font-size: 20px; padding-top:10px; color: black;">รายการทั้งหมด </a>|
-                    <a href="{{route('checkbill')}}" style="font-size: 20px; padding-top:10px; color: grey;">เช็กสลิป </a>|
+                    <a href="{{route('checkBill')}}" style="font-size: 20px; padding-top:10px; color: grey;">เช็กสลิป </a>|
                     {{-- <a href="#" style="font-size: 20px; padding-top:10px; color: grey;">ค้างรับ</a> | --}}
                 </span>
 
