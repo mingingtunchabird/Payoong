@@ -60,6 +60,10 @@
     <div class="col-xs-6 col-md-4">
         <img id="pictureUrl" width="10%" style="border-radius: 50%; float: left;">
         {{-- <p id="userId"></p> --}}
+        {{-- <p id="displayName" ></p> --}}
+    </div>
+    <div class="col-xs-6 col-md-4">
+
         <p id="displayName" ></p>
     </div>
   {{-- <div class="col-xs-6 col-md-4  mt-4 text-center mr-2"><img src="https://sv1.picz.in.th/images/2021/02/11/o1lNH9.png" width="200" height="42"></div> --}}
