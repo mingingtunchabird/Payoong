@@ -103,7 +103,7 @@
         .box{
             /* margin: auto; */
             /* width: 60%; */
-            height: 100%;
+            height: fit-content;
             width: 100%;
             /* margin-left: 10vw; */
             background-color: white;
