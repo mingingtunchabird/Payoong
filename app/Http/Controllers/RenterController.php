@@ -358,7 +358,7 @@ class RenterController extends Controller
     public function check1()
     {
         $confirm = DB::table('confirm_payments')->select('img')->get();
-        redirect('/checkBill')->with('confirm', $confirm);
+        return redirect('/checkBill')->with('confirm', $confirm);
     }
 
     public function upbill(){
