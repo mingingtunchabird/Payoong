@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    {{-- <form  action="/addbill" method="GET">
+    <form  action="/addbill" method="GET">
         <div class="d-flex">
             <div class="p-2"> <p style="font-size: 18px; color:gray;"> เลือกรายการที่จะแสดง </p></div>
         </div>
@@ -137,7 +137,7 @@
             </div>
         </div>
 
-    </form> --}}
+    </form>
 
 
 
