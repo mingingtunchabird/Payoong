@@ -228,7 +228,7 @@
                     @if ($repair->status == "กำลังดำเนินการ")
                     <td style="text-align: center;">
 
-                        <a href="{{route('acceptRepair2', $repair->id)}}" id="myBtn2" class="btn btn-success">ดำเนินการแล้ว</a>
+                        <a href="{{route('acceptRepair2', $repair->id)}}" id="myBtn2" class="btn btn-success text-secondary">ดำเนินการแล้ว</a>
 
                     </td>
                     @endif
