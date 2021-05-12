@@ -337,7 +337,7 @@ class RenterController extends Controller
         // }
 
         // $renters = Renter::select('roomid', 'firstname')->get();
-        $repairs = repair::Orderby('created_at','asc')->get();
+        $repairs = repair::Orderby('created_at','desc')->get();
         return view('repair')->with('repairs',$repairs);
     }
 
