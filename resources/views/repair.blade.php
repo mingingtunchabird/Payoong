@@ -224,7 +224,7 @@
                     @if ($repair->status == "ซ่อมแล้ว")
                     <td style="text-align: center;">
 
-                        <button id="myBtn2" class="btn btn-success"  type="submit" style="width: 125px;">แจ้งเตือน</button>
+                        <button id="myBtn2" class="btn btn-outline-success"  type="submit" style="width: 125px;">แจ้งเตือน</button>
 
                     </td>
                     @endif
@@ -233,7 +233,7 @@
                     @if ($repair->status == "กำลังดำเนินการ")
                     <td style="text-align: center;">
 
-                        <a href="{{route('acceptRepair2', $repair->id)}}" id="myBtn2" class="btn btn-success" style="width: 125px;">ดำเนินการแล้ว</a>
+                        <a href="{{route('acceptRepair2', $repair->id)}}" id="myBtn2" class="btn btn-outline-success" style="width: 125px;">ดำเนินการแล้ว</a>
                     </td>
                     @endif
 
@@ -241,7 +241,7 @@
                     @if ($repair->status == "ยังไม่ได้ซ่อม")
                     <td style="text-align: center;">
 
-                        <a href="{{route('acceptRepair', $repair->id)}}" id="myBtn2" class="btn btn-success" style="width: 125px;">รับเรื่องซ่อม</a>
+                        <a href="{{route('acceptRepair', $repair->id)}}" id="myBtn2" class="btn btn-outline-success" style="width: 125px;">รับเรื่องซ่อม</a>
                     </td>
                     @endif
 
