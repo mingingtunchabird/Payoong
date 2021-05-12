@@ -119,7 +119,7 @@ class RenterController extends Controller
 //        $rent_prices =  $setting -> rent_price ;
 
         $rooms = Renter::all();
-        $todos = rent_bill::OrderBy('created_at','desc')->get();
+        $todos = rent_bill::OrderBy('status','desc')->get();
         return view('addbill')->with('todos',$todos)->with('rooms',$rooms)->with('settings',$settings);
     }
 
@@ -337,7 +337,7 @@ class RenterController extends Controller
         // }
 
         // $renters = Renter::select('roomid', 'firstname')->get();
-        $repairs = repair::Orderby('created_at','DESC')->get();
+        $repairs = repair::Orderby('created_at','desc')->get();
         return view('repair')->with('repairs',$repairs);
     }
 
