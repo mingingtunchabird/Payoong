@@ -20,7 +20,7 @@
         }
 
         .box{
-            position: fixed;
+            /* position: fixed; */
             height: fit-content;
             width: 500vh;
             margin-left: 10vw;
