@@ -224,7 +224,7 @@
                     @if ($repair->status == "ซ่อมแล้ว")
                     <td style="text-align: center;">
 
-                        <button id="myBtn2" class="btn btn-outline-success"  type="submit" style="width: 125px;">แจ้งเตือน</button>
+                        <button id="myBtn2" class="btn btn-outline-success" onclick="reply('{{$repair->roomid}}' ,'ห้อง {{$repair->roomid}} ซ่อมเสร็จแล้วจ้า')"  type="submit" style="width: 125px;">แจ้งเตือน</button>
 
                     </td>
                     @endif
@@ -380,6 +380,22 @@
             }
         }
         //alert("Copied! " + copyText.value);
+    }
+
+    function reply(roomid, msg){
+        $.post("https://www.busyaunties.lnw.mn/index.php/service/reply", {
+            roomid: roomid,
+            msg: msg
+        },
+            function (data, textStatus, jqXHR) {
+                console.log(data)
+                if(data == '1'){
+                    swal("แจ้งเตือนเรียบร้อย", "ส่งแจ้งเตือนให้ลูกบ้านเรียบร้อยแล้ว", "success")
+                }else{
+                    swal("Error!", "ส่งแจ้งเตือนไม่สำเร็จ ไม่ได้ลงทะเบียนหรือเปล่านะ!", "error")
+                }
+            },
+        );
     }
 </script>
 
