@@ -339,7 +339,7 @@
     "contents": [
       {
         "type": "text",
-        "text": "ใบแจ้งหนี้ห้อง"+roomid,
+        "text": "ใบแจ้งหนี้ห้อง "+roomid,
         "weight": "bold",
         "color": "#1DB446",
         "size": "sm"
